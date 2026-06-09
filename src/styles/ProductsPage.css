@@ -223,16 +223,17 @@
 .product-image-container {
   position: relative;
   width: 100%;
-  padding-bottom: 100%;
+  aspect-ratio: 1;
   overflow: hidden;
   background: var(--neutral-bg);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .product-list .product-image-container {
   width: 200px;
   min-width: 200px;
-  padding-bottom: 200px;
-  height: 200px;
+  aspect-ratio: 1;
+  height: auto;
 }
 
 .product-image {
@@ -380,8 +381,8 @@
 
   .product-list .product-image-container {
     width: 150px;
-    padding-bottom: 150px;
-    height: 150px;
+    aspect-ratio: 1;
+    height: auto;
   }
 
   .product-details {
@@ -409,7 +410,7 @@
 
   .product-list .product-image-container {
     width: 100px;
-    padding-bottom: 100px;
-    height: 100px;
+    aspect-ratio: 1;
+    height: auto;
   }
 }
