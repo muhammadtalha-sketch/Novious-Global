@@ -1,0 +1,144 @@
+.how-it-works {
+  background: linear-gradient(180deg, var(--neutral-bg) 0%, white 100%);
+  padding: var(--spacing-4xl) 0;
+}
+
+.steps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.step-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.step-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}
+
+.step-number {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(230, 57, 70, 0.1);
+  line-height: 1;
+  z-index: 0;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  box-shadow: var(--shadow-lg);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--neutral-text);
+}
+
+.step-content p {
+  color: var(--neutral-light);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.step-connector {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary) 0%, rgba(230, 57, 70, 0.2) 100%);
+  left: 49px;
+  top: 100%;
+  display: none;
+}
+
+/* Desktop layout with connectors */
+@media (min-width: 1024px) {
+  .steps-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .step-connector {
+    display: block;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .step-connector {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 var(--spacing-md);
+  }
+
+  .step-icon-wrapper {
+    width: 80px;
+  }
+
+  .step-number {
+    font-size: 2.5rem;
+  }
+
+  .step-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .step-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-connector {
+    left: 39px;
+  }
+}
