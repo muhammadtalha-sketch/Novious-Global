@@ -3,7 +3,7 @@
 }
 
 .contact-header {
-  background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, rgba(15, 31, 62, 0.85) 0%, rgba(27, 58, 107, 0.85) 100%), url('/images/Contact-Us.jpg') center/cover no-repeat;
   color: white;
   padding: var(--spacing-4xl) var(--spacing-lg);
   text-align: center;
@@ -27,6 +27,7 @@
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 3rem;
+  width: 100%;
 }
 
 /* Contact Info Section */

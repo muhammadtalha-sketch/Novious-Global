@@ -1,11 +1,12 @@
 .hero-section {
   position: relative;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  background: linear-gradient(135deg, rgba(15, 31, 62, 0.7) 0%, rgba(27, 58, 107, 0.7) 100%), url('/images/home.jpg') center/cover no-repeat;
   overflow: hidden;
   min-height: 650px;
   display: flex;
   align-items: center;
-  padding: var(--spacing-4xl) var(--spacing-lg);
+  padding: var(--spacing-4xl) 0;
+  width: 100%;
 }
 
 .hero-overlay {
@@ -14,8 +15,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23E63946" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>')
-    repeat;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23E63946" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>') repeat;
   opacity: 0.5;
   pointer-events: none;
 }
@@ -30,6 +30,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
+  padding: 0 var(--spacing-lg);
 }
 
 .hero-text {
@@ -41,13 +42,13 @@
 .hero-title {
   font-size: 3.5rem;
   line-height: 1.2;
-  color: var(--neutral-text);
+  color: white;
   font-weight: 800;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--neutral-light);
+  color: rgb(242, 224, 224);
   line-height: 1.8;
   margin: 0;
 }
@@ -121,9 +122,12 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -134,12 +138,13 @@
   position: absolute;
   bottom: 40px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-10%);
   display: flex;
   gap: 2rem;
   z-index: 2;
   flex-wrap: wrap;
   justify-content: center;
+  padding-left: 50px;
 }
 
 .badge {
@@ -166,6 +171,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

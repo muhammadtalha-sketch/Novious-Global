@@ -10,6 +10,7 @@
   max-width: 1400px;
   margin: 0 auto 3rem;
   padding: 0 var(--spacing-lg);
+  width: 100%;
 }
 
 .product-card {
@@ -164,6 +165,8 @@
   justify-content: center;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--spacing-lg);
 }
 
 /* Responsive */

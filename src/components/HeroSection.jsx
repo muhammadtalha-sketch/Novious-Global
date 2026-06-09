@@ -1,5 +1,5 @@
-import { ArrowRight } from 'lucide-react';
-import '../styles/HeroSection.css';
+import { ArrowRight } from "lucide-react";
+import "../styles/HeroSection.css";
 
 export default function HeroSection({ onNavigate }) {
   return (
@@ -11,28 +11,33 @@ export default function HeroSection({ onNavigate }) {
             Your Trusted Sourcing Partner From China
           </h1>
           <p className="hero-subtitle">
-            We simplify global sourcing. Find reliable suppliers, ensure perfect quality, and deliver to your doorstep with complete peace of mind.
+            We simplify global sourcing. Find reliable suppliers, ensure perfect
+            quality, and deliver to your doorstep with complete peace of mind.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={() => onNavigate('products')}>
+            <button
+              className="btn btn-primary"
+              onClick={() => onNavigate("products")}
+            >
               Explore Products
               <ArrowRight size={18} />
             </button>
-            <button className="btn btn-secondary">
-              Schedule Consultation
-            </button>
+            <button className="btn btn-secondary">Schedule Consultation</button>
           </div>
         </div>
         <div className="hero-image">
           <div className="hero-graphic">
             <div className="graphic-item item-1">
-              <img src="https://via.placeholder.com/300x300?text=Quality+Assured" alt="Quality Assurance" />
+              <img
+                src="/images/Quality-Assurance.jpg"
+                alt="Quality Assurance"
+              />
             </div>
             <div className="graphic-item item-2">
-              <img src="https://via.placeholder.com/300x300?text=Global+Shipping" alt="Global Shipping" />
+              <img src="/images/Global-Shipping.jpg" alt="Global Shipping" />
             </div>
             <div className="graphic-item item-3">
-              <img src="https://via.placeholder.com/300x300?text=Supplier+Network" alt="Supplier Network" />
+              <img src="/images/Supplier-Network.jpg" alt="Supplier Network" />
             </div>
           </div>
         </div>

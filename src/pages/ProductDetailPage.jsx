@@ -25,9 +25,9 @@ export default function ProductDetailPage({ product, onBack }) {
   ];
 
   const relatedProducts = [
-    { id: 101, name: 'Similar Item 1', price: '$20-40', image: 'https://via.placeholder.com/200x200?text=Related1' },
-    { id: 102, name: 'Similar Item 2', price: '$25-45', image: 'https://via.placeholder.com/200x200?text=Related2' },
-    { id: 103, name: 'Similar Item 3', price: '$18-35', image: 'https://via.placeholder.com/200x200?text=Related3' },
+    { id: 101, name: 'Similar Item 1', price: '$20-40', image: '/products/Bags-Cases-2.jpg' },
+    { id: 102, name: 'Similar Item 2', price: '$25-45', image: '/products/Kitchen-2.jpg' },
+    { id: 103, name: 'Similar Item 3', price: '$18-35', image: '/products/Electronics-2.jpg' },
   ];
 
   return (

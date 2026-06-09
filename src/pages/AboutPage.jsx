@@ -29,10 +29,10 @@ export default function AboutPage() {
   ];
 
   const team = [
-    { name: 'John Zhang', role: 'Founder & CEO', image: 'https://via.placeholder.com/150x150?text=John' },
-    { name: 'Sarah Liu', role: 'Head of Operations', image: 'https://via.placeholder.com/150x150?text=Sarah' },
-    { name: 'David Chen', role: 'Quality Manager', image: 'https://via.placeholder.com/150x150?text=David' },
-    { name: 'Emma Wang', role: 'Logistics Director', image: 'https://via.placeholder.com/150x150?text=Emma' }
+    { name: 'John Zhang', role: 'Founder & CEO', image: '/products/Shoes-Watches-1.jpg' },
+    { name: 'Sarah Liu', role: 'Head of Operations', image: '/products/Bags-Cases-1.jpg' },
+    { name: 'David Chen', role: 'Quality Manager', image: '/products/Kitchen-1.jpg' },
+    { name: 'Emma Wang', role: 'Logistics Director', image: '/products/Electronics-1.jpg' }
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="mission-image">
-              <img src="https://via.placeholder.com/500x400?text=Our+Mission" alt="Mission" />
+              <img src="/images/Our-Products.jpg" alt="Mission" />
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="network-map">
-              <img src="https://via.placeholder.com/500x300?text=Global+Network" alt="Network Map" />
+              <img src="/images/Global-Shipping.jpg" alt="Network Map" />
             </div>
           </div>
         </div>

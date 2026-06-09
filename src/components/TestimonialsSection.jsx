@@ -10,7 +10,7 @@ export default function TestimonialsSection() {
       company: 'Stellar Fashion',
       content: 'Novious Global transformed our sourcing process. They found us reliable suppliers at incredible prices and ensured perfect quality every time.',
       rating: 5,
-      image: 'https://via.placeholder.com/80x80?text=SC'
+      image: '/products/Clothing-1.jpg'
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
       company: 'Home Decor Plus',
       content: 'Working with Novious has been a game-changer. Their verification process gives us complete peace of mind about supplier reliability.',
       rating: 5,
-      image: 'https://via.placeholder.com/80x80?text=MJ'
+      image: '/products/Home-Decor-1.jpg'
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ export default function TestimonialsSection() {
       company: 'Global Retail Solutions',
       content: 'The team is responsive, professional, and truly understands our business needs. They consistently deliver quality products on schedule.',
       rating: 5,
-      image: 'https://via.placeholder.com/80x80?text=LR'
+      image: '/products/Sports-1.jpg'
     }
   ];
 
