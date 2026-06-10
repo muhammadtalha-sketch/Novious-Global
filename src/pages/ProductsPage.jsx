@@ -29,6 +29,21 @@ export default function ProductsPage({ onSelectProduct }) {
         <p>Browse our extensive catalog of verified products from trusted manufacturers</p>
       </div>
 
+      {/* Main Container with Breadcrumb */}
+      <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%', paddingLeft: 'var(--spacing-lg)', paddingRight: 'var(--spacing-lg)', overflow: 'hidden' }}>
+        <nav className="breadcrumb">
+          <a href="/">Home</a>
+          <span>/</span>
+          <span>Products</span>
+          {selectedCategory && selectedCategory !== 'All Products' && (
+            <>
+              <span>/</span>
+              <span>{selectedCategory}</span>
+            </>
+          )}
+        </nav>
+      </div>
+
       <div className="products-container">
         {/* Sidebar */}
         <aside className="products-sidebar">
@@ -116,11 +131,19 @@ export default function ProductsPage({ onSelectProduct }) {
                     </div>
                   </div>
                   <div className="product-details">
-                    <h3>{product.name}</h3>
-                    <p className="category">{product.category}</p>
+                    <div>
+                      <h3>{product.name}</h3>
+                      <p className="category">{product.category}</p>
+                    </div>
                     <div className="product-meta">
-                      <span className="price">{product.price}</span>
-                      <span className="moq">MOQ: {product.moq}</span>
+                      <div>
+                        <span className="price-label">Price:</span>
+                        <span className="price">{product.price}</span>
+                      </div>
+                      <div>
+                        <span className="moq-label">MOQ:</span>
+                        <span className="moq">{product.moq}</span>
+                      </div>
                     </div>
                     <button className="request-quote-btn">Request Quote</button>
                   </div>
