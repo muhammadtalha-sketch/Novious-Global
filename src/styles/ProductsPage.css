@@ -450,7 +450,7 @@
 /* Responsive - Large Desktop (1440px+) */
 @media (min-width: 1440px) {
   .products-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
