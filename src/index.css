@@ -190,7 +190,7 @@ a:hover {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--primary);
+  color: white;
   border: 2px solid var(--primary);
 }
 
