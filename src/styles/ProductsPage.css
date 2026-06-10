@@ -1,6 +1,8 @@
 .products-page {
   width: 100%;
+  max-width: 100%;
   background: white;
+  overflow-x: hidden;
 }
 
 .products-header {
@@ -29,6 +31,7 @@
   grid-template-columns: 280px 1fr;
   gap: 3rem;
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* Sidebar */
