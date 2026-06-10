@@ -79,7 +79,7 @@
   background: linear-gradient(180deg, var(--primary) 0%, rgba(230, 57, 70, 0.2) 100%);
   left: 49px;
   top: 100%;
-  display: none;
+  display: none !important;
 }
 
 /* Desktop layout with connectors */
@@ -89,7 +89,7 @@
   }
 
   .step-connector {
-    display: block;
+    display: none !important;
   }
 }
 
@@ -105,7 +105,7 @@
   }
 
   .step-connector {
-    display: block;
+    display: none !important;
   }
 }
 
