@@ -199,6 +199,26 @@ a:hover {
   color: white;
 }
 
+.btn-view-all {
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-view-all:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-schedule {
+  border-color: white;
+}
+
+.btn-schedule:hover {
+  background-color: white;
+  color: var(--primary);
+  border-color: white;
+}
+
 .btn-outline {
   background-color: transparent;
   color: var(--neutral-text);

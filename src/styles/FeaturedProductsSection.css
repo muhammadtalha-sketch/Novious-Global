@@ -1,6 +1,6 @@
 .featured-products {
   background: white;
-  padding: var(--spacing-4xl) 0;
+  padding: var(--spacing-4xl) 0 2rem 0;
 }
 
 .products-grid {
@@ -172,7 +172,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .featured-products {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-3xl) 0 1.5rem 0;
   }
 
   .products-grid {

@@ -22,7 +22,7 @@ export default function HeroSection({ onNavigate }) {
               Explore Products
               <ArrowRight size={18} />
             </button>
-            <button className="btn btn-secondary">Schedule Consultation</button>
+            <button className="btn btn-secondary btn-schedule">Schedule Consultation</button>
           </div>
         </div>
         <div className="hero-image">

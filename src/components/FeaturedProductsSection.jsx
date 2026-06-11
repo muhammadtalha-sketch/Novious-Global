@@ -52,7 +52,7 @@ export default function FeaturedProductsSection({ onNavigate }) {
         </div>
 
         <div className="view-all-btn-container">
-          <button className="btn btn-secondary" onClick={() => onNavigate('products')}>
+          <button className="btn btn-secondary btn-view-all" onClick={() => onNavigate('products')}>
             View All Products
           </button>
         </div>
