@@ -1,4 +1,4 @@
-import { Users, Globe, Award, TrendingUp, ArrowRight } from 'lucide-react';
+import { Users, Globe, Award, TrendingUp, ArrowRight, Building2 } from 'lucide-react';
 import '../styles/AboutPage.css';
 
 export default function AboutPage({ onNavigate }) {
@@ -179,6 +179,57 @@ export default function AboutPage({ onNavigate }) {
             </div>
             <div className="network-map">
               <img src="/images/Global-Shipping.jpg" alt="Global Network" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="about-partners-section">
+        <div className="container">
+          <h2>Our Partners</h2>
+          <p className="section-subtitle">
+            Trusted by businesses and organizations around the world
+          </p>
+          <div className="about-partners-grid">
+            {[
+              { num: '01', label: 'Partner 1' },
+              { num: '02', label: 'Partner 2' },
+              { num: '03', label: 'Partner 3' },
+              { num: '04', label: 'Partner 4' }
+            ].map((partner, i) => (
+              <div key={i} className="about-partner-card">
+                <div className="about-partner-logo">
+                  <Building2 size={32} />
+                </div>
+                <p className="about-partner-label">{partner.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Images */}
+      <section className="about-gallery-section">
+        <div className="container">
+          <div className="about-gallery-grid">
+            <div className="about-gallery-item">
+              <img src="/images/About-Us.jpg" alt="Novious Global Team" />
+              <div className="gallery-overlay">
+                <p>Our Team in Shanghai</p>
+              </div>
+            </div>
+            <div className="about-gallery-item">
+              <img src="/images/Supplier-Network.jpg" alt="Supplier Network" />
+              <div className="gallery-overlay">
+                <p>Verified Supplier Network</p>
+              </div>
+            </div>
+            <div className="about-gallery-item">
+              <img src="/images/Quality-Assurance.jpg" alt="Quality Assurance" />
+              <div className="gallery-overlay">
+                <p>Quality Assurance Process</p>
+              </div>
             </div>
           </div>
         </div>

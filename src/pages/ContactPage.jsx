@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, MessageCircle, Globe } from 'lucide-react';
 import '../styles/ContactPage.css';
 
 const WHATSAPP_NUMBER = '923077433743';
@@ -65,6 +65,12 @@ export default function ContactPage() {
       title: 'WhatsApp',
       details: '+923077433743',
       link: WHATSAPP_LINK
+    },
+    {
+      icon: Globe,
+      title: 'Website',
+      details: 'noviousglobal.com',
+      link: 'https://noviousglobal.com'
     }
   ];
 

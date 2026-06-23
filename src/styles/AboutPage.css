@@ -613,3 +613,126 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Partners Section */
+.about-partners-section {
+  padding: var(--spacing-3xl) 0;
+  background: white;
+}
+
+.about-partners-section h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.about-partners-grid {
+  display: flex;
+  gap: var(--spacing-xl);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-2xl);
+}
+
+.about-partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  background: var(--neutral-bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  min-width: 180px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-partner-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.about-partner-logo {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.about-partner-label {
+  font-weight: 700;
+  color: var(--neutral-text);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Gallery Section */
+.about-gallery-section {
+  padding: var(--spacing-3xl) 0;
+  background: var(--neutral-bg);
+}
+
+.about-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.about-gallery-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.about-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.about-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(15, 31, 62, 0.75));
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.gallery-overlay p {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-partners-grid {
+    gap: var(--spacing-md);
+  }
+
+  .about-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-partner-card {
+    min-width: 140px;
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-partners-grid {
+    justify-content: center;
+  }
+}

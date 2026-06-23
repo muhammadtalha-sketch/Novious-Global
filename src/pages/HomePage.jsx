@@ -1,5 +1,6 @@
 import '../styles/HomePage.css';
 import HeroSection from '../components/HeroSection';
+import WhatWeDoSection from '../components/WhatWeDoSection';
 import ValuePropsSection from '../components/ValuePropsSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import ServicesSection from '../components/ServicesSection';
@@ -12,6 +13,7 @@ export default function HomePage({ onNavigate }) {
   return (
     <div className="home-page">
       <HeroSection onNavigate={onNavigate} />
+      <WhatWeDoSection />
       <ValuePropsSection />
       <HowItWorksSection />
       <ServicesSection />
