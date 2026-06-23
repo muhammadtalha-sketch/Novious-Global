@@ -45,7 +45,12 @@ export default function BusinessStrategyPage({ onNavigate }) {
     }
   ];
 
-  const localPartners = ['ALTUS', 'ZTTEK', 'Percentac Energy'];
+  const localPartners = [
+    { name: 'ALTUS',           logo: '/images/partners/altus.png',    desc: 'High-end new energy solutions' },
+    { name: 'ZTTEK',           logo: '/images/partners/zttek.png',    desc: '智泰新能源 – New energy technology' },
+    { name: 'Percentec Energy', logo: '/images/partners/percentec.png', desc: 'Clean energy & sustainability' },
+    { name: 'CHUHAN',          logo: '/images/partners/chuhan.png',   desc: '楚汉科技 – Industrial technology' }
+  ];
 
   return (
     <div className="strategy-page">
@@ -175,8 +180,15 @@ export default function BusinessStrategyPage({ onNavigate }) {
           <div className="partners-grid">
             {localPartners.map((partner, index) => (
               <div key={index} className="partner-card">
-                <div className="partner-logo-placeholder">{partner.charAt(0)}</div>
-                <p className="partner-name">{partner}</p>
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="partner-logo-img"
+                />
+                <p className="partner-name">{partner.name}</p>
+                <p style={{ fontSize: '0.8rem', color: 'var(--neutral-lighter)', margin: 0, textAlign: 'center' }}>
+                  {partner.desc}
+                </p>
               </div>
             ))}
           </div>
