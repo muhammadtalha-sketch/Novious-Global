@@ -37,7 +37,7 @@
 
 .how-it-works-section {
   padding: var(--spacing-4xl) 0;
-  background: white;
+  background: var(--neutral-bg);
 }
 
 .sourcing-section .container,
@@ -129,33 +129,37 @@
   white-space: nowrap;
 }
 
-/* ── Solutions Grid ──────────────────────────────────── */
+/* ── Solutions Grid — 5 columns desktop ──────────────── */
 .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-lg);
   margin-top: var(--spacing-2xl);
+  align-items: stretch;
 }
 
 .solution-card {
   display: flex;
-  gap: var(--spacing-lg);
+  flex-direction: column;
+  gap: var(--spacing-md);
   background: white;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  height: 100%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .solution-card:hover {
   box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
   border-color: var(--primary);
 }
 
 .solution-icon {
   width: 56px;
   height: 56px;
-  background: rgba(15, 31, 62, 0.07);
+  background: rgba(15, 31, 62, 0.08);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -164,18 +168,20 @@
   flex-shrink: 0;
 }
 
-.solution-text h3 {
-  font-size: 1rem;
+.solution-card h3 {
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--neutral-text);
-  margin: 0 0 var(--spacing-sm);
+  margin: 0;
+  line-height: 1.35;
 }
 
-.solution-text p {
+.solution-card p {
   color: var(--neutral-light);
-  font-size: 0.92rem;
+  font-size: 0.87rem;
   line-height: 1.65;
   margin: 0;
+  flex: 1;
 }
 
 /* ── How It Works — Card Row ─────────────────────────── */
@@ -313,30 +319,22 @@
 
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1200px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .services-grid,
+  .solutions-grid,
   .steps-row {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 900px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .services-grid,
+  .solutions-grid,
   .steps-row {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .solutions-grid {
-    grid-template-columns: 1fr;
-  }
-  .solution-card {
-    flex-direction: column;
-  }
   .section-divider {
     padding: 0 var(--spacing-lg);
   }
@@ -350,9 +348,8 @@
 }
 
 @media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+  .services-grid,
+  .solutions-grid,
   .steps-row {
     grid-template-columns: 1fr;
   }

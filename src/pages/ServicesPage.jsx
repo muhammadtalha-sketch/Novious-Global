@@ -119,12 +119,10 @@ export default function ServicesPage({ onNavigate }) {
               return (
                 <div key={i} className="solution-card">
                   <div className="solution-icon">
-                    <Icon size={32} />
+                    <Icon size={36} />
                   </div>
-                  <div className="solution-text">
-                    <h3>{sol.title}</h3>
-                    <p>{sol.description}</p>
-                  </div>
+                  <h3>{sol.title}</h3>
+                  <p>{sol.description}</p>
                 </div>
               );
             })}
