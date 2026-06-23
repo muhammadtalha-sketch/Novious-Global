@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
 import '../styles/ContactPage.css';
+
+const WHATSAPP_NUMBER = '923077433743';
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -24,7 +27,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission
     console.log('Form submitted:', formData);
     setSubmitted(true);
     setTimeout(() => {
@@ -42,10 +44,9 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      icon: Phone,
-      title: 'Phone',
-      details: '+86 15618483542',
-      link: 'tel:+8615618483542'
+      icon: MapPin,
+      title: 'Address',
+      details: 'Lotus Tower, No. 150 Tianzhou Road, Shanghai 200032, China'
     },
     {
       icon: Mail,
@@ -54,9 +55,47 @@ export default function ContactPage() {
       link: 'mailto:info@noviousglobal.com'
     },
     {
-      icon: MapPin,
-      title: 'Address',
-      details: 'Lotus Tower, No. 159 Tianzhou Road, Shanghai 200032, China'
+      icon: Phone,
+      title: 'Phone',
+      details: '+86 15618483542',
+      link: 'tel:+8615618483542'
+    },
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp',
+      details: '+923077433743',
+      link: WHATSAPP_LINK
+    }
+  ];
+
+  const socialLinks = [
+    { label: 'YouTube', href: 'https://www.youtube.com/@NoviousGlobal', icon: '▶' },
+    { label: 'Instagram', href: 'https://www.instagram.com/chinasourcing_?igsh=OHN0NXdpNGxpcTBq&utm_source=qr', icon: '📸' },
+    { label: 'Facebook', href: 'https://www.facebook.com/noviousglobalsourcingchina', icon: 'f' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@novious.global.china', icon: '♪' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/novious-global-sourcing-from-china/', icon: 'in' }
+  ];
+
+  const faqs = [
+    {
+      question: 'What services do you offer for product sourcing?',
+      answer: 'We provide end-to-end product sourcing services, including supplier identification, factory verification, quotation collection, price negotiation, sample coordination, and quality inspection to help businesses source reliable products from China and other markets.'
+    },
+    {
+      question: 'How do you ensure the quality of products from suppliers?',
+      answer: 'Our team performs pre-shipment inspections, in-process quality checks, and factory audits to ensure that every product meets your quality standards. We also assist in sample review and compliance verification before mass production.'
+    },
+    {
+      question: 'Can you help with Amazon FBA or e-commerce fulfillment?',
+      answer: 'Yes! We offer specialized FBA and e-commerce solutions, including product sourcing, supplier verification, packaging and labeling guidance, shipping to Amazon warehouses, and logistics coordination to help online sellers streamline their operations.'
+    },
+    {
+      question: 'Do you provide support for large or project-based sourcing?',
+      answer: 'Absolutely. Our Project-Based Services include personalized consultations, factory visits, supplier meetings, contract support, price negotiation, and end-to-end project management, ensuring smooth execution from production to shipment.'
+    },
+    {
+      question: 'How do I get a quotation for my sourcing requirements?',
+      answer: 'You can share your project details with us through our contact form or consultation call. Once we understand your requirements, we provide a transparent quotation tailored to your product specifications, quantity, and sourcing complexity.'
     }
   ];
 
@@ -86,7 +125,7 @@ export default function ContactPage() {
                 <div className="info-content">
                   <h3>{info.title}</h3>
                   {info.link ? (
-                    <a href={info.link} className="info-link">{info.details}</a>
+                    <a href={info.link} className="info-link" target={info.title === 'WhatsApp' ? '_blank' : undefined} rel="noopener noreferrer">{info.details}</a>
                   ) : (
                     <p>{info.details}</p>
                   )}
@@ -95,13 +134,31 @@ export default function ContactPage() {
             );
           })}
 
-          {/* WhatsApp */}
+          {/* WhatsApp CTA */}
           <div className="whatsapp-section">
             <h3>Quick Message</h3>
             <p>Chat with us on WhatsApp for faster response</p>
-            <button className="whatsapp-btn">
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-btn"
+            >
               💬 Chat on WhatsApp
-            </button>
+            </a>
+          </div>
+
+          {/* Social Media */}
+          <div className="social-section">
+            <h3>Follow Us</h3>
+            <div className="social-links-list">
+              {socialLinks.map((s, i) => (
+                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="social-link-item">
+                  <span className="social-icon-text">{s.icon}</span>
+                  {s.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Business Hours */}
@@ -194,6 +251,8 @@ export default function ContactPage() {
                     <option value="quality-control">Quality Control</option>
                     <option value="logistics">Shipping & Logistics</option>
                     <option value="fba">Amazon FBA Solutions</option>
+                    <option value="ecommerce">E-Commerce Fulfillment</option>
+                    <option value="project">Project-Based Service</option>
                     <option value="other">Other Inquiry</option>
                   </select>
                 </div>
@@ -233,30 +292,12 @@ export default function ContactPage() {
         <div className="container">
           <h2>Frequently Asked Questions</h2>
           <div className="faq-grid">
-            <div className="faq-item">
-              <h3>How long does sourcing typically take?</h3>
-              <p>Most sourcing projects take 15-30 days from consultation to delivery, depending on quantity and customization requirements.</p>
-            </div>
-            <div className="faq-item">
-              <h3>What is your minimum order quantity?</h3>
-              <p>MOQ varies by product and supplier, typically ranging from 50-500 units. We can negotiate for larger orders.</p>
-            </div>
-            <div className="faq-item">
-              <h3>Do you offer customization and private labeling?</h3>
-              <p>Yes, we specialize in custom branding, packaging design, and private label solutions for most products.</p>
-            </div>
-            <div className="faq-item">
-              <h3>What payment methods do you accept?</h3>
-              <p>We accept bank transfers, letters of credit, and other secure payment methods. Details are discussed during consultation.</p>
-            </div>
-            <div className="faq-item">
-              <h3>How do you ensure product quality?</h3>
-              <p>We perform supplier audits, inspect raw materials, monitor production, and conduct final quality checks before shipment.</p>
-            </div>
-            <div className="faq-item">
-              <h3>Do you provide warranty or guarantees?</h3>
-              <p>Yes, all products are guaranteed to meet specifications. We also handle replacements and issues that arise during shipping.</p>
-            </div>
+            {faqs.map((faq, index) => (
+              <div key={index} className="faq-item">
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

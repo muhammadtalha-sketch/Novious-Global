@@ -98,7 +98,7 @@
 }
 
 .product-title {
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
   color: var(--neutral-text);
   margin: 0;
   line-height: 1.2;

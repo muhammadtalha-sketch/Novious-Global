@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import '../styles/Header.css';
+
+const WHATSAPP_LINK = 'https://wa.me/923077433743?text=Hi%2C%20I%20would%20like%20to%20get%20a%20quote.';
 
 export default function Header({ currentPage, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -14,6 +15,15 @@ export default function Header({ currentPage, onNavigate }) {
     onNavigate(page);
     setMobileMenuOpen(false);
   };
+
+  const navLinks = [
+    { label: 'Home', page: 'home' },
+    { label: 'Products', page: 'products' },
+    { label: 'Business Strategy', page: 'business-strategy' },
+    { label: 'About', page: 'about' },
+    { label: 'Blog', page: 'blog' },
+    { label: 'Contact', page: 'contact' }
+  ];
 
   return (
     <header className="header">
@@ -29,95 +39,57 @@ export default function Header({ currentPage, onNavigate }) {
               e.target.style.display = 'none';
             }}
           />
-          <style>{`
-            .header-logo-image {
-              max-width: 200px;
-              height: 60px;
-              object-fit: contain;
-            }
-          `}</style>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="header-nav desktop-nav">
-          <button
-            className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
-            onClick={() => handleNavClick('home')}
-          >
-            Home
-          </button>
-          <button
-            className={`nav-link ${currentPage === 'products' ? 'active' : ''}`}
-            onClick={() => handleNavClick('products')}
-          >
-            Products
-          </button>
-          <button
-            className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
-            onClick={() => handleNavClick('about')}
-          >
-            About
-          </button>
-          <button
-            className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}
-            onClick={() => handleNavClick('contact')}
-          >
-            Contact
-          </button>
+          {navLinks.map((link) => (
+            <button
+              key={link.page}
+              className={`nav-link ${currentPage === link.page ? 'active' : ''}`}
+              onClick={() => handleNavClick(link.page)}
+            >
+              {link.label}
+            </button>
+          ))}
         </nav>
 
         {/* Right Section */}
         <div className="header-actions">
-          <button className="search-btn" onClick={() => setSearchOpen(!searchOpen)}>
-            <Search size={20} />
-          </button>
-          <button className="cta-btn">Get Quote</button>
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-btn"
+          >
+            Get Quote
+          </a>
           <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Search Bar */}
-      {searchOpen && (
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search products..."
-            className="search-input"
-          />
-          <Search size={20} className="search-icon" />
-        </div>
-      )}
-
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <nav className="mobile-nav">
-          <button
-            className="mobile-nav-link"
-            onClick={() => handleNavClick('home')}
+          {navLinks.map((link) => (
+            <button
+              key={link.page}
+              className="mobile-nav-link"
+              onClick={() => handleNavClick(link.page)}
+            >
+              {link.label}
+            </button>
+          ))}
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mobile-cta-btn"
           >
-            Home
-          </button>
-          <button
-            className="mobile-nav-link"
-            onClick={() => handleNavClick('products')}
-          >
-            Products
-          </button>
-          <button
-            className="mobile-nav-link"
-            onClick={() => handleNavClick('about')}
-          >
-            About
-          </button>
-          <button
-            className="mobile-nav-link"
-            onClick={() => handleNavClick('contact')}
-          >
-            Contact
-          </button>
-          <button className="mobile-cta-btn">Get Quote</button>
+            Get Quote
+          </a>
         </nav>
       )}
     </header>

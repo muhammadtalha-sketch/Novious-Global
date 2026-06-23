@@ -1,11 +1,11 @@
-import { ArrowRight, CheckCircle, TrendingUp, Zap, Award, Globe } from 'lucide-react';
 import '../styles/HomePage.css';
 import HeroSection from '../components/HeroSection';
 import ValuePropsSection from '../components/ValuePropsSection';
 import HowItWorksSection from '../components/HowItWorksSection';
-import FeaturedProductsSection from '../components/FeaturedProductsSection';
 import ServicesSection from '../components/ServicesSection';
+import PricingSection from '../components/PricingSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import FeaturedProductsSection from '../components/FeaturedProductsSection';
 import CTASection from '../components/CTASection';
 
 export default function HomePage({ onNavigate }) {
@@ -14,9 +14,10 @@ export default function HomePage({ onNavigate }) {
       <HeroSection onNavigate={onNavigate} />
       <ValuePropsSection />
       <HowItWorksSection />
-      <FeaturedProductsSection onNavigate={onNavigate} />
       <ServicesSection />
+      <PricingSection />
       <TestimonialsSection />
+      <FeaturedProductsSection onNavigate={onNavigate} />
       <CTASection onNavigate={onNavigate} />
     </div>
   );

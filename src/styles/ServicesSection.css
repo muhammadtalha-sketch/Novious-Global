@@ -5,7 +5,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -42,6 +42,7 @@
   justify-content: center;
   color: var(--primary);
   font-size: 2rem;
+  flex-shrink: 0;
 }
 
 .service-card:hover .service-icon {
@@ -63,15 +64,32 @@
   line-height: 1.7;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
   .services {
     padding: var(--spacing-3xl) 0;
   }
 
   .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+  }
+
+  .service-icon {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
   }
 
   .service-card {
@@ -79,8 +97,8 @@
   }
 
   .service-icon {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
   }
 
   .service-card h3 {
@@ -96,9 +114,19 @@
   .services-grid {
     grid-template-columns: 1fr;
     padding: 0 var(--spacing-md);
+    gap: 1rem;
   }
 
   .service-card {
     padding: 1.5rem;
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
   }
 }

@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Filter, Grid, List, Search } from 'lucide-react';
+import { Filter, Grid, List, Search, MessageCircle } from 'lucide-react';
 import '../styles/ProductsPage.css';
 import PRODUCTS from '../data/products';
+
+const WHATSAPP_LINK = 'https://wa.me/923077433743?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20a%20product.';
 
 export default function ProductsPage({ onSelectProduct }) {
   const [view, setView] = useState('grid');
@@ -13,9 +15,7 @@ export default function ProductsPage({ onSelectProduct }) {
     ...new Set(PRODUCTS.map(p => p.category))
   ];
 
-  const products = PRODUCTS;
-
-  const filteredProducts = products.filter(product => {
+  const filteredProducts = PRODUCTS.filter(product => {
     const matchesCategory = selectedCategory === 'All Products' || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -26,7 +26,7 @@ export default function ProductsPage({ onSelectProduct }) {
       {/* Header */}
       <div className="products-header">
         <h1>Our Products</h1>
-        <p>Browse our extensive catalog of verified products from trusted manufacturers</p>
+        <p>Browse our extensive catalog of verified products from trusted Chinese manufacturers. Contact us to request a quote.</p>
       </div>
 
       {/* Main Container with Breadcrumb */}
@@ -75,22 +75,18 @@ export default function ProductsPage({ onSelectProduct }) {
             </div>
           </div>
 
-          <div className="filter-section">
-            <h3>Price Range</h3>
-            <div className="price-range">
-              <label>
-                <input type="checkbox" /> Under $10
-              </label>
-              <label>
-                <input type="checkbox" /> $10 - $25
-              </label>
-              <label>
-                <input type="checkbox" /> $25 - $50
-              </label>
-              <label>
-                <input type="checkbox" /> $50+
-              </label>
-            </div>
+          {/* Request Quote CTA */}
+          <div className="sidebar-cta">
+            <p>Looking for a specific product?</p>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sidebar-wa-btn"
+            >
+              <MessageCircle size={16} />
+              Request a Quote
+            </a>
           </div>
         </aside>
 
@@ -124,6 +120,7 @@ export default function ProductsPage({ onSelectProduct }) {
                 <div key={product.id} className={`product-item product-${view}`}>
                   <div className="product-image-container">
                     <img src={product.image} alt={product.name} />
+                    {product.badge && <span className="product-badge-tag">{product.badge}</span>}
                     <div className="product-overlay">
                       <button className="view-details-btn" onClick={() => onSelectProduct(product)}>
                         View Details
@@ -137,15 +134,18 @@ export default function ProductsPage({ onSelectProduct }) {
                     </div>
                     <div className="product-meta">
                       <div>
-                        <span className="price-label">Price:</span>
-                        <span className="price">{product.price}</span>
-                      </div>
-                      <div>
                         <span className="moq-label">MOQ:</span>
                         <span className="moq">{product.moq}</span>
                       </div>
                     </div>
-                    <button className="request-quote-btn">Request Quote</button>
+                    <a
+                      href={`https://wa.me/923077433743?text=${encodeURIComponent(`Hi, I am interested in ${product.name}. Please provide a quote.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="request-quote-btn"
+                    >
+                      Request Quote
+                    </a>
                   </div>
                 </div>
               ))

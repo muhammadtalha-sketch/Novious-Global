@@ -1,8 +1,18 @@
-import { Mail, Phone, MapPin, MessageCircle, Share2, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import '../styles/Footer.css';
+
+const WHATSAPP_LINK = 'https://wa.me/923077433743';
 
 export default function Footer({ onNavigate }) {
   const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    { label: 'YouTube', href: 'https://www.youtube.com/@NoviousGlobal', abbr: 'YT' },
+    { label: 'Instagram', href: 'https://www.instagram.com/chinasourcing_?igsh=OHN0NXdpNGxpcTBq&utm_source=qr', abbr: 'IG' },
+    { label: 'Facebook', href: 'https://www.facebook.com/noviousglobalsourcingchina', abbr: 'FB' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@novious.global.china', abbr: 'TT' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/novious-global-sourcing-from-china/', abbr: 'LI' }
+  ];
 
   return (
     <footer className="footer">
@@ -18,17 +28,31 @@ export default function Footer({ onNavigate }) {
               />
             </div>
             <p className="footer-description">
-              Your trusted sourcing partner from China. We connect international buyers with reliable manufacturers.
+              Your trusted sourcing partner in China. We connect international buyers with verified manufacturers for seamless, end-to-end sourcing.
             </p>
             <div className="social-links">
-              <a href="#" className="social-icon" title="Share">
-                <Share2 size={20} />
-              </a>
-              <a href="#" className="social-icon" title="Follow">
-                <Heart size={20} />
-              </a>
-              <a href="#" className="social-icon" title="WhatsApp">
-                <MessageCircle size={20} />
+              {socialLinks.map((s, i) => (
+                <a
+                  key={i}
+                  href={s.href}
+                  className="social-icon"
+                  title={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                >
+                  {s.abbr}
+                </a>
+              ))}
+              <a
+                href={WHATSAPP_LINK}
+                className="social-icon whatsapp-icon"
+                title="WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                WA
               </a>
             </div>
           </div>
@@ -37,18 +61,12 @@ export default function Footer({ onNavigate }) {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul className="footer-links">
-              <li>
-                <button onClick={() => onNavigate('home')}>Home</button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('products')}>Products</button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('about')}>About Us</button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('contact')}>Contact</button>
-              </li>
+              <li><button onClick={() => onNavigate('home')}>Home</button></li>
+              <li><button onClick={() => onNavigate('products')}>Products</button></li>
+              <li><button onClick={() => onNavigate('business-strategy')}>Business Strategy</button></li>
+              <li><button onClick={() => onNavigate('about')}>About Us</button></li>
+              <li><button onClick={() => onNavigate('blog')}>Blog</button></li>
+              <li><button onClick={() => onNavigate('contact')}>Contact</button></li>
             </ul>
           </div>
 
@@ -60,6 +78,8 @@ export default function Footer({ onNavigate }) {
               <li><a href="#services">Quality Control</a></li>
               <li><a href="#services">Global Shipping</a></li>
               <li><a href="#services">FBA Solutions</a></li>
+              <li><a href="#services">E-Commerce Fulfillment</a></li>
+              <li><a href="#services">Project-Based Solutions</a></li>
             </ul>
           </div>
 
@@ -71,7 +91,7 @@ export default function Footer({ onNavigate }) {
                 <MapPin size={18} />
                 <div>
                   <p className="contact-label">Head Office</p>
-                  <p className="contact-value">Lotus Tower, No. 159 Tianzhou Road, Shanghai 200032, China</p>
+                  <p className="contact-value">Lotus Tower, No. 150 Tianzhou Road, Shanghai 200032, China</p>
                 </div>
               </div>
               <div className="contact-item">
@@ -86,6 +106,13 @@ export default function Footer({ onNavigate }) {
                 <div>
                   <p className="contact-label">Phone</p>
                   <p className="contact-value"><a href="tel:+8615618483542">+86 15618483542</a></p>
+                </div>
+              </div>
+              <div className="contact-item">
+                <Phone size={18} />
+                <div>
+                  <p className="contact-label">WhatsApp</p>
+                  <p className="contact-value"><a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">+923077433743</a></p>
                 </div>
               </div>
             </div>

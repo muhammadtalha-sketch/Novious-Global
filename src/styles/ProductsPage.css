@@ -15,7 +15,7 @@
 .products-header h1 {
   color: white;
   margin-bottom: 0.5rem;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
 }
 
 .products-header p {
@@ -32,6 +32,7 @@
   padding: 1rem 0;
   font-size: 0.9rem;
   color: var(--neutral-light);
+  flex-wrap: wrap;
 }
 
 .breadcrumb a {
@@ -428,16 +429,74 @@
   font-size: 0.95rem;
   transition: var(--transition-fast);
   margin-top: auto;
+  text-align: center;
+  text-decoration: none;
+  display: block;
 }
 
 .request-quote-btn:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+  color: white;
 }
 
 .request-quote-btn:active {
   transform: translateY(0);
+}
+
+/* Product badge on image */
+.product-badge-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+/* Sidebar CTA */
+.sidebar-cta {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sidebar-cta p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.sidebar-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #25D366;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.sidebar-wa-btn:hover {
+  background: #128C7E;
+  color: white;
 }
 
 .no-products {

@@ -1,6 +1,5 @@
-import { Star, ShoppingCart } from 'lucide-react';
+import { Star } from 'lucide-react';
 import '../styles/FeaturedProductsSection.css';
-
 import PRODUCTS from '../data/products';
 
 export default function FeaturedProductsSection({ onNavigate }) {
@@ -11,7 +10,7 @@ export default function FeaturedProductsSection({ onNavigate }) {
       <div className="container">
         <h2 className="section-title">Featured Products</h2>
         <p className="section-subtitle">
-          Explore our carefully curated selection from top suppliers
+          Explore our carefully curated selection from top verified suppliers in China
         </p>
 
         <div className="products-grid">
@@ -37,14 +36,19 @@ export default function FeaturedProductsSection({ onNavigate }) {
                     ))}
                   </div>
                   <span className="rating-value">{product.rating}</span>
-                  <span className="reviews-count">({product.reviews})</span>
+                  <span className="reviews-count">({product.reviews} reviews)</span>
                 </div>
 
                 <div className="product-footer">
-                  <span className="product-price">{product.price}</span>
-                  <button className="product-btn">
-                    <ShoppingCart size={16} />
-                  </button>
+                  <span className="moq-info">MOQ: {product.moq}</span>
+                  <a
+                    href={`https://wa.me/923077433743?text=${encodeURIComponent(`Hi, I am interested in ${product.name}. Please provide a quote.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="product-quote-btn"
+                  >
+                    Get Quote
+                  </a>
                 </div>
               </div>
             </div>

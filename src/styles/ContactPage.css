@@ -11,13 +11,17 @@
 
 .contact-header h1 {
   color: white;
+  font-size: clamp(1.75rem, 4vw, 3rem);
   margin-bottom: 1rem;
 }
 
 .contact-header p {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   margin: 0;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-container {
@@ -40,7 +44,7 @@
 .contact-info-section h2 {
   color: var(--neutral-text);
   margin: 0;
-  font-size: 1.75rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
 }
 
 .info-intro {
@@ -52,8 +56,8 @@
 
 .contact-info-item {
   display: flex;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 1.25rem;
+  padding: 1.25rem;
   background: var(--neutral-bg);
   border-radius: var(--radius-lg);
   transition: var(--transition-fast);
@@ -64,8 +68,8 @@
 }
 
 .info-icon {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   background: var(--primary);
   border-radius: 50%;
   display: flex;
@@ -82,7 +86,7 @@
 }
 
 .info-content h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin: 0;
   color: var(--neutral-text);
   font-weight: 600;
@@ -92,7 +96,7 @@
 .info-link {
   margin: 0;
   color: var(--neutral-light);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .info-link {
@@ -107,14 +111,14 @@
 
 /* WhatsApp Section */
 .whatsapp-section {
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
   border: 1px solid rgba(76, 175, 80, 0.3);
   border-radius: var(--radius-lg);
 }
 
 .whatsapp-section h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--neutral-text);
   margin-bottom: 0.5rem;
 }
@@ -122,7 +126,7 @@
 .whatsapp-section p {
   color: var(--neutral-light);
   margin: 0 0 1rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .whatsapp-btn {
@@ -135,6 +139,7 @@
   cursor: pointer;
   font-weight: 600;
   transition: var(--transition-fast);
+  font-size: 0.95rem;
 }
 
 .whatsapp-btn:hover {
@@ -142,23 +147,77 @@
   transform: translateY(-2px);
 }
 
+/* Social Media Section */
+.social-section {
+  padding: 1.25rem;
+  background: var(--neutral-bg);
+  border-radius: var(--radius-lg);
+}
+
+.social-section h3 {
+  font-size: 1.05rem;
+  color: var(--neutral-text);
+  margin-bottom: 0.75rem;
+}
+
+.social-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.social-link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--neutral-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.social-link-item:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(230, 57, 70, 0.04);
+}
+
+.social-icon-text {
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
 /* Business Hours */
 .hours-section {
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: var(--neutral-bg);
   border-radius: var(--radius-lg);
 }
 
 .hours-section h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--neutral-text);
   margin-bottom: 0.75rem;
 }
 
 .hours-section p {
   color: var(--neutral-light);
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
 }
 
 /* Form Section */
@@ -176,7 +235,7 @@
 .form-wrapper h2 {
   color: var(--neutral-text);
   margin: 0;
-  font-size: 1.75rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
 }
 
 .form-wrapper > p {
@@ -188,7 +247,7 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .form-row {
@@ -206,7 +265,7 @@
 .form-group label {
   color: var(--neutral-text);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .form-group input,
@@ -215,9 +274,11 @@
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-family: var(--font-primary);
   transition: var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -230,7 +291,7 @@
 
 .form-group textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 140px;
 }
 
 .form-agreement {
@@ -240,11 +301,12 @@
 }
 
 .form-agreement input {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   margin-top: 0.2rem;
   accent-color: var(--primary);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .form-agreement label {
@@ -252,7 +314,8 @@
   cursor: pointer;
   font-weight: normal;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 /* Success Message */
@@ -311,13 +374,13 @@
 
 .faq-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .faq-item {
   background: white;
-  padding: 2rem;
+  padding: 1.75rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   transition: var(--transition);
@@ -330,80 +393,79 @@
 
 .faq-item h3 {
   color: var(--neutral-text);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.875rem;
 }
 
 .faq-item p {
   color: var(--neutral-light);
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.7;
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 1024px) {
+  .contact-header {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+
   .contact-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .faq-section {
+    padding: var(--spacing-3xl) 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-header {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .contact-container {
+    padding: var(--spacing-2xl) var(--spacing-md);
   }
 
   .form-row {
     grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 768px) {
-  .contact-header {
-    padding: var(--spacing-2xl) var(--spacing-lg);
-  }
-
-  .contact-header h1 {
-    font-size: 1.75rem;
-  }
-
-  .contact-container {
-    padding: var(--spacing-2xl) var(--spacing-md);
-  }
-
-  .contact-info-section h2 {
-    font-size: 1.5rem;
-  }
-
-  .form-wrapper h2 {
-    font-size: 1.5rem;
-  }
 
   .faq-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
   .contact-header {
-    padding: var(--spacing-2xl) var(--spacing-md);
+    padding: var(--spacing-xl) var(--spacing-md);
   }
 
   .contact-container {
-    padding: var(--spacing-2xl) var(--spacing-md);
+    padding: var(--spacing-xl) var(--spacing-md);
     gap: 1.5rem;
-  }
-
-  .contact-info-section h2,
-  .form-wrapper h2 {
-    font-size: 1.25rem;
   }
 
   .contact-info-item {
     padding: 1rem;
+    gap: 1rem;
   }
 
   .info-icon {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
   }
 
+  /* Prevent iOS zoom on inputs */
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -416,6 +478,10 @@
   }
 
   .faq-item {
-    padding: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .faq-section .container {
+    padding: 0 var(--spacing-md);
   }
 }

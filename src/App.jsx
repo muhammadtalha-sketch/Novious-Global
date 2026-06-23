@@ -7,6 +7,8 @@ import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import BusinessStrategyPage from './pages/BusinessStrategyPage';
+import BlogPage from './pages/BlogPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -27,9 +29,13 @@ function App() {
       case 'product-detail':
         return <ProductDetailPage product={selectedProduct} onBack={() => handleNavigate('products')} />;
       case 'about':
-        return <AboutPage />;
+        return <AboutPage onNavigate={handleNavigate} />;
       case 'contact':
         return <ContactPage />;
+      case 'business-strategy':
+        return <BusinessStrategyPage onNavigate={handleNavigate} />;
+      case 'blog':
+        return <BlogPage onNavigate={handleNavigate} />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }

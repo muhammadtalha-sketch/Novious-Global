@@ -1,4 +1,4 @@
-import { Layers, Package, CheckSquare, Truck, Box, Wrench } from 'lucide-react';
+import { Package, Globe, Briefcase, ShoppingCart, Award, CheckSquare } from 'lucide-react';
 import '../styles/ServicesSection.css';
 
 export default function ServicesSection() {
@@ -6,32 +6,32 @@ export default function ServicesSection() {
     {
       icon: Package,
       title: 'Product Sourcing',
-      description: 'Find the most reliable manufacturers balancing price, quality, and delivery time.'
+      description: 'Supplier identification, factory visit, negotiation, contract review, quality control, and risk mitigation — we manage it all.'
     },
     {
-      icon: Layers,
-      title: 'Private Label & Packaging',
-      description: 'Customize products with your branding, packaging design, and custom labeling.'
+      icon: Globe,
+      title: 'Global Shipping',
+      description: 'Shipping route planning (sea, air, rail, express) and Incoterms negotiation (FOB, CIF, EXW, DDP, etc.) for seamless global delivery.'
+    },
+    {
+      icon: Briefcase,
+      title: 'Project-Based B2B Solutions',
+      description: 'Project requirement analysis, supplier identification & resource allocation, quality control, delivery, and post-project support.'
+    },
+    {
+      icon: ShoppingCart,
+      title: 'E-Commerce Fulfillment Support',
+      description: 'Shopify, Amazon, Etsy, WHATNOT, eBay, and WooCommerce order fulfillment for online sellers — from sourcing to delivery.'
+    },
+    {
+      icon: Award,
+      title: 'Amazon Solutions',
+      description: 'Private label development, logistics & FBA fulfillment support, and product compliance & documentation for Amazon sellers.'
     },
     {
       icon: CheckSquare,
       title: 'Quality Control & Inspection',
-      description: 'Comprehensive checks covering raw materials, production, and final inspection.'
-    },
-    {
-      icon: Truck,
-      title: 'Global Shipping & Logistics',
-      description: 'Air, sea, and express shipping with customs clearance worldwide.'
-    },
-    {
-      icon: Box,
-      title: 'Amazon FBA Solutions',
-      description: 'Direct warehouse delivery, packaging compliance, and product preparation.'
-    },
-    {
-      icon: Wrench,
-      title: 'Project-Based Solutions',
-      description: 'Large-scale industrial projects, infrastructure, and specialized sourcing.'
+      description: 'Product quality inspection and pre-shipment inspection to ensure every product meets your standards before it leaves China.'
     }
   ];
 
@@ -40,7 +40,7 @@ export default function ServicesSection() {
       <div className="container">
         <h2 className="section-title">Our Services</h2>
         <p className="section-subtitle">
-          Comprehensive solutions for every sourcing need
+          Comprehensive sourcing solutions for startups, e-commerce sellers, retail chains, wholesalers, and B2B companies
         </p>
 
         <div className="services-grid">

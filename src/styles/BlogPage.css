@@ -1,0 +1,212 @@
+.blog-page {
+  width: 100%;
+}
+
+.blog-header {
+  background: linear-gradient(135deg, rgba(15, 31, 62, 0.88) 0%, rgba(27, 58, 107, 0.88) 100%), url('/images/About-Us.jpg') center/cover no-repeat;
+  color: white;
+  padding: var(--spacing-4xl) var(--spacing-lg);
+  text-align: center;
+}
+
+.blog-header h1 {
+  color: white;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.blog-header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  margin: 0;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Coming Soon */
+.blog-coming-soon {
+  padding: var(--spacing-3xl) 0;
+}
+
+.blog-coming-soon .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.coming-soon-box {
+  background: var(--color-bg-secondary);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--border-radius-xl, 16px);
+  padding: var(--spacing-3xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  color: var(--color-text-primary);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.coming-soon-box svg {
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+
+.coming-soon-box h2 {
+  color: var(--color-text-primary);
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.coming-soon-box p {
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 480px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: #25D366;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+  background: #128C7E;
+}
+
+/* Upcoming Articles */
+.blog-upcoming {
+  padding: var(--spacing-3xl) 0;
+}
+
+.blog-upcoming .container,
+.blog-cta .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.blog-upcoming h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.blog-card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  opacity: 0.85;
+}
+
+.blog-card-category {
+  display: inline-block;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+}
+
+.blog-card h3 {
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.blog-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+.blog-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.blog-date {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+  padding: 0;
+}
+
+/* Blog CTA */
+.blog-cta {
+  padding: var(--spacing-3xl) 0;
+  background: var(--color-bg-secondary);
+}
+
+.blog-cta-box {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.blog-cta-box h2 {
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.blog-cta-box p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

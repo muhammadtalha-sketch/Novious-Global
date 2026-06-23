@@ -1,27 +1,32 @@
-import { CheckCircle, Shield, Zap, Globe } from 'lucide-react';
+import { Network, Clock, Layers, ShieldCheck, Globe } from 'lucide-react';
 import '../styles/ValuePropsSection.css';
 
 export default function ValuePropsSection() {
   const values = [
     {
-      icon: Shield,
-      title: 'Verified Suppliers',
-      description: 'Every supplier undergoes rigorous verification, background checks, and factory audits to ensure legitimacy and quality.'
-    },
-    {
-      icon: Zap,
-      title: 'Complete Supply Chain',
-      description: 'From product sourcing to quality control, private labeling, and global shipping—we handle every step.'
-    },
-    {
-      icon: CheckCircle,
-      title: 'Quality Assurance',
-      description: 'Comprehensive inspection of raw materials, production process, and final products before shipment.'
-    },
-    {
       icon: Globe,
-      title: 'Global Logistics',
-      description: 'Air, sea, express shipping with customs clearance and consolidation services worldwide.'
+      title: '50+ Branch Offices',
+      description: 'Extensive network in China with access to reliable companies across multiple industries and full understanding of the Chinese business environment.'
+    },
+    {
+      icon: Clock,
+      title: '10+ Years of Experience',
+      description: 'Proven experience and expertise in handling diverse and complex projects for international clients across industries worldwide.'
+    },
+    {
+      icon: Network,
+      title: 'Extensive Network in China',
+      description: 'Access to reliable manufacturers and suppliers across multiple industries, with deep understanding of the Chinese business landscape.'
+    },
+    {
+      icon: Layers,
+      title: 'End-to-End Solutions',
+      description: 'From sourcing agreements to logistics and supervision, we cover the entire sourcing process so you can focus on growing your business.'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Trustworthy Partner',
+      description: 'A client-first approach built on transparency, accountability, and long-term cooperation. Your success is our greatest motivation.'
     }
   ];
 
@@ -30,7 +35,7 @@ export default function ValuePropsSection() {
       <div className="container">
         <h2 className="section-title">Why Choose Novious Global</h2>
         <p className="section-subtitle">
-          We Win When You Win—Your success is our success
+          We Win When You Win — Your success is our success
         </p>
 
         <div className="value-grid">
