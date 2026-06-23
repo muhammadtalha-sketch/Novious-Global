@@ -184,37 +184,26 @@
   flex: 1;
 }
 
-/* ── How It Works — Card Row ─────────────────────────── */
+/* ── How It Works — Badge-above-card layout ──────────── */
 .steps-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  margin-top: var(--spacing-2xl);
-  align-items: stretch;
+  margin-top: 3rem;         /* room for the badge that floats above */
+  align-items: start;
 }
 
-.step-item {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem 1.25rem 1.5rem;
+/* Outer wrapper — positions the badge above the card */
+.step-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 0.875rem;
+  gap: 0;
   min-width: 0;
-  overflow: hidden;
-  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
-.step-item:hover {
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary);
-  transform: translateY(-3px);
-}
-
-.step-number {
+/* Floating step badge — sits above the card */
+.step-badge {
   width: 52px;
   height: 52px;
   background: var(--primary);
@@ -226,31 +215,52 @@
   font-size: 1.1rem;
   font-weight: 800;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.35);
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1px;      /* kiss the top border of the card */
 }
 
-.step-item h3 {
-  font-size: 0.9rem;
+/* Card body — badge connects to the top */
+.step-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem 1.5rem;
+  text-align: center;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.step-wrapper:hover .step-card {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+  transform: translateY(3px);
+}
+
+.step-wrapper:hover .step-badge {
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.5);
+}
+
+.step-card h3 {
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--neutral-text);
   margin: 0;
   line-height: 1.35;
   overflow-wrap: break-word;
-  width: 100%;
 }
 
-.step-item p {
+.step-card p {
   font-size: 0.84rem;
   color: var(--neutral-light);
-  line-height: 1.65;
+  line-height: 1.7;
   margin: 0;
-  flex: 1;
   overflow-wrap: break-word;
-  width: 100%;
-}
-
-.step-arrow {
-  display: none;
 }
 
 /* ── CTA ─────────────────────────────────────────────── */
@@ -325,17 +335,25 @@
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1200px) {
   .services-grid,
-  .solutions-grid,
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .steps-row {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
 }
 
 @media (max-width: 900px) {
   .services-grid,
-  .solutions-grid,
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .steps-row {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 }
 
@@ -354,14 +372,23 @@
 
 @media (max-width: 600px) {
   .services-grid,
-  .solutions-grid,
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
   .steps-row {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .services-header {
     padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .step-card {
+    padding: 1.5rem 1rem;
   }
 }
