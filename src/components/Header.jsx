@@ -23,7 +23,7 @@ export default function Header({ currentPage, onNavigate }) {
     { label: 'Project Services', page: 'project-base' },
     { label: 'Business Strategy', page: 'business-strategy' },
     { label: 'About', page: 'about' },
-    { label: 'Blog', page: 'blog' },
+    // { label: 'Blog', page: 'blog' }, // temporarily hidden — re-enable when blog is ready
     { label: 'Contact', page: 'contact' }
   ];
 

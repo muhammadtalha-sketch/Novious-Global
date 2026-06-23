@@ -67,7 +67,7 @@ export default function Footer({ onNavigate }) {
               <li><button onClick={() => onNavigate('project-base')}>Project Services</button></li>
               <li><button onClick={() => onNavigate('business-strategy')}>Business Strategy</button></li>
               <li><button onClick={() => onNavigate('about')}>About Us</button></li>
-              <li><button onClick={() => onNavigate('blog')}>Blog</button></li>
+              {/* <li><button onClick={() => onNavigate('blog')}>Blog</button></li> */}
               <li><button onClick={() => onNavigate('contact')}>Contact</button></li>
             </ul>
           </div>
