@@ -132,14 +132,19 @@ export default function BusinessStrategyPage({ onNavigate }) {
           <div className="digital-partners-row">
             <h3>Our Digital Partner</h3>
             <div className="digital-partners-grid">
-              <div className="digital-partner-card">
+              <a
+                href="https://ingeniousc.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="digital-partner-card"
+              >
                 <img
                   src="/images/partners/ingenious-concepts.jpeg"
                   alt="Ingenious Concepts"
                   className="digital-partner-logo-img"
                 />
                 <p className="digital-partner-name">Ingenious Concepts</p>
-              </div>
+              </a>
             </div>
           </div>
         </div>
