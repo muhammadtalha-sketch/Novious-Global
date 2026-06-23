@@ -6,7 +6,7 @@
 .value-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
@@ -61,21 +61,14 @@
 }
 
 /* Tablet — 3 columns */
-@media (max-width: 1200px) {
-  .value-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .value-props {
-    padding: var(--spacing-3xl) 0;
-  }
-
+@media (max-width: 1100px) {
   .value-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
+  }
+
+  .value-props {
+    padding: var(--spacing-3xl) 0;
   }
 
   .value-card h3 {

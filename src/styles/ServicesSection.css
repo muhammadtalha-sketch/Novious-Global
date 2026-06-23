@@ -5,25 +5,27 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
   width: 100%;
+  align-items: stretch;
 }
 
 .service-card {
   background: white;
-  padding: 2.5rem;
+  padding: 1.75rem 1.25rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   text-align: center;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
   align-items: center;
+  height: 100%;
 }
 
 .service-card:hover {
@@ -52,64 +54,67 @@
 }
 
 .service-card h3 {
-  font-size: 1.25rem;
+  font-size: 0.95rem;
   color: var(--neutral-text);
   margin: 0;
+  line-height: 1.3;
 }
 
 .service-card p {
   color: var(--neutral-light);
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  flex: 1;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
+/* Tablet — 3 columns */
+@media (max-width: 1200px) {
   .services {
     padding: var(--spacing-3xl) 0;
   }
 
   .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .service-card {
-    padding: 2rem;
-  }
-
-  .service-icon {
-    width: 72px;
-    height: 72px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
 
   .service-card {
-    padding: 1.75rem;
+    padding: 1.5rem 1rem;
   }
 
   .service-icon {
     width: 64px;
     height: 64px;
   }
+}
+
+/* Tablet portrait — 2 columns */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .service-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
 
   .service-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .service-card p {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
   }
 }
 
+/* Mobile — single column */
 @media (max-width: 480px) {
   .services-grid {
     grid-template-columns: 1fr;
@@ -118,15 +123,15 @@
   }
 
   .service-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
     flex-direction: row;
     text-align: left;
     align-items: flex-start;
   }
 
   .service-icon {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     flex-shrink: 0;
   }
 }
