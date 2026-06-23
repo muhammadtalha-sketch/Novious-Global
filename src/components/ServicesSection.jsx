@@ -43,11 +43,11 @@ export default function ServicesSection() {
           Comprehensive sourcing solutions for startups, e-commerce sellers, retail chains, wholesalers, and B2B companies
         </p>
 
-        <div className="services-grid">
+        <div className="home-services-grid">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div key={index} className="service-card">
+              <div key={index} className="home-service-card">
                 <div className="service-icon">
                   <IconComponent size={40} />
                 </div>
