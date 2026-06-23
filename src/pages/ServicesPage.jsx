@@ -137,12 +137,10 @@ export default function ServicesPage({ onNavigate }) {
           <p className="section-subtitle">A simple, transparent process from your first inquiry to final delivery.</p>
           <div className="steps-row">
             {steps.map((s, i) => (
-              <div key={i} className="step-wrapper">
-                <div className="step-badge">{s.step}</div>
-                <div className="step-card">
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                </div>
+              <div key={i} className="step-card">
+                <span className="step-num">{s.step}</span>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
               </div>
             ))}
           </div>
