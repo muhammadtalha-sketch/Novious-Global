@@ -128,16 +128,18 @@ export default function BusinessStrategyPage({ onNavigate }) {
             </div>
           </div>
 
-          {/* Our Digital Partner logos */}
+          {/* Our Digital Partner */}
           <div className="digital-partners-row">
-            <h3>Our Digital Partners</h3>
+            <h3>Our Digital Partner</h3>
             <div className="digital-partners-grid">
-              {['Digital Partner 1', 'Digital Partner 2', 'Digital Partner 3', 'Digital Partner 4'].map((partner, i) => (
-                <div key={i} className="digital-partner-card">
-                  <div className="digital-partner-logo">{partner.charAt(0)}</div>
-                  <p className="digital-partner-name">{partner}</p>
-                </div>
-              ))}
+              <div className="digital-partner-card">
+                <img
+                  src="/images/partners/ingenious-concepts.jpeg"
+                  alt="Ingenious Concepts"
+                  className="digital-partner-logo-img"
+                />
+                <p className="digital-partner-name">Ingenious Concepts</p>
+              </div>
             </div>
           </div>
         </div>
