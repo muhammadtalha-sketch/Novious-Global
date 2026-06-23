@@ -9,6 +9,8 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import BusinessStrategyPage from './pages/BusinessStrategyPage';
 import BlogPage from './pages/BlogPage';
+import ServicesPage from './pages/ServicesPage';
+import ProjectBasePage from './pages/ProjectBasePage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -36,6 +38,10 @@ function App() {
         return <BusinessStrategyPage onNavigate={handleNavigate} />;
       case 'blog':
         return <BlogPage onNavigate={handleNavigate} />;
+      case 'services':
+        return <ServicesPage onNavigate={handleNavigate} />;
+      case 'project-base':
+        return <ProjectBasePage onNavigate={handleNavigate} />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }

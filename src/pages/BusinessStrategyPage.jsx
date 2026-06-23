@@ -40,8 +40,8 @@ export default function BusinessStrategyPage({ onNavigate }) {
     },
     {
       icon: FileText,
-      title: 'Localization Strategy',
-      description: 'Product adaptation, localized strategy, and regional compliance setup ensure that offerings are tailored to local market needs and meet all regulatory requirements in target regions.'
+      title: 'Sales Training & Development',
+      description: 'Train your sales force in global selling techniques. We cover cross-cultural communication, export sales strategies, sales pitch, and negotiation skills so your team can convert international leads into loyal customers.'
     }
   ];
 
@@ -150,14 +150,14 @@ export default function BusinessStrategyPage({ onNavigate }) {
         </div>
       </section>
 
-      {/* Internationalization Section */}
+      {/* Business Strategy Section */}
       <section className="international-section">
         <div className="container">
-          <h2 className="section-title">Internationalization Strategy</h2>
+          <h2 className="section-title">Business Strategy</h2>
           <p className="section-subtitle">
-            Our internationalization strategy services lay the groundwork for successful international
-            expansion. We help Chinese companies find and vet the right overseas partners — whether
-            distributors, collaborations, or joint ventures — to extend your reach.
+            Our business strategy services lay the groundwork for successful international expansion.
+            We help Chinese companies find and vet the right overseas partners — whether distributors,
+            agents, or joint ventures — to extend your reach and navigate unfamiliar markets confidently.
           </p>
 
           <div className="strategy-grid">

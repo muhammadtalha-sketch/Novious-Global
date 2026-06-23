@@ -653,14 +653,18 @@
 }
 
 .about-partner-logo {
-  width: 72px;
+  width: 160px;
   height: 72px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+}
+
+.about-partner-logo-img {
+  width: 160px;
+  height: 72px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .about-partner-label {

@@ -193,14 +193,14 @@ export default function AboutPage({ onNavigate }) {
           </p>
           <div className="about-partners-grid">
             {[
-              { num: '01', label: 'Partner 1' },
-              { num: '02', label: 'Partner 2' },
-              { num: '03', label: 'Partner 3' },
-              { num: '04', label: 'Partner 4' }
+              { label: 'ALTUS',            logo: '/images/partners/altus.png' },
+              { label: 'ZTTEK',            logo: '/images/partners/zttek.png' },
+              { label: 'Percentec Energy', logo: '/images/partners/percentec.png' },
+              { label: 'CHUHAN',           logo: '/images/partners/chuhan.png' }
             ].map((partner, i) => (
               <div key={i} className="about-partner-card">
                 <div className="about-partner-logo">
-                  <Building2 size={32} />
+                  <img src={partner.logo} alt={partner.label} className="about-partner-logo-img" />
                 </div>
                 <p className="about-partner-label">{partner.label}</p>
               </div>

@@ -63,6 +63,8 @@ export default function Footer({ onNavigate }) {
             <ul className="footer-links">
               <li><button onClick={() => onNavigate('home')}>Home</button></li>
               <li><button onClick={() => onNavigate('products')}>Products</button></li>
+              <li><button onClick={() => onNavigate('services')}>Services</button></li>
+              <li><button onClick={() => onNavigate('project-base')}>Project Services</button></li>
               <li><button onClick={() => onNavigate('business-strategy')}>Business Strategy</button></li>
               <li><button onClick={() => onNavigate('about')}>About Us</button></li>
               <li><button onClick={() => onNavigate('blog')}>Blog</button></li>
@@ -74,12 +76,12 @@ export default function Footer({ onNavigate }) {
           <div className="footer-section">
             <h4>Services</h4>
             <ul className="footer-links">
-              <li><a href="#services">Product Sourcing</a></li>
-              <li><a href="#services">Quality Control</a></li>
-              <li><a href="#services">Global Shipping</a></li>
-              <li><a href="#services">FBA Solutions</a></li>
-              <li><a href="#services">E-Commerce Fulfillment</a></li>
-              <li><a href="#services">Project-Based Solutions</a></li>
+              <li><button onClick={() => onNavigate('services')}>Product Sourcing</button></li>
+              <li><button onClick={() => onNavigate('services')}>Quality Control</button></li>
+              <li><button onClick={() => onNavigate('services')}>Global Shipping</button></li>
+              <li><button onClick={() => onNavigate('services')}>FBA Solutions</button></li>
+              <li><button onClick={() => onNavigate('services')}>Amazon FBA</button></li>
+              <li><button onClick={() => onNavigate('project-base')}>Project-Based Solutions</button></li>
             </ul>
           </div>
 

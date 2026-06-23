@@ -27,6 +27,16 @@ export default function ProductsPage({ onSelectProduct }) {
       <div className="products-header">
         <h1>Our Products</h1>
         <p>Browse our extensive catalog of verified products from trusted Chinese manufacturers. Contact us to request a quote.</p>
+        <div className="products-badges">
+          <span className="products-feature-badge">Customizable</span>
+          <span className="products-feature-badge">OEM/ODM Available</span>
+          <span className="products-feature-badge">1 by 1 Quality Inspection</span>
+        </div>
+      </div>
+
+      {/* MOQ Notice */}
+      <div className="moq-notice">
+        <p>We source products for any order size. However, some of the products require a Minimum Order Quantity (MOQ). Contact us to confirm details for your specific product.</p>
       </div>
 
       {/* Main Container with Breadcrumb */}

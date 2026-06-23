@@ -19,6 +19,8 @@ export default function Header({ currentPage, onNavigate }) {
   const navLinks = [
     { label: 'Home', page: 'home' },
     { label: 'Products', page: 'products' },
+    { label: 'Services', page: 'services' },
+    { label: 'Project Services', page: 'project-base' },
     { label: 'Business Strategy', page: 'business-strategy' },
     { label: 'About', page: 'about' },
     { label: 'Blog', page: 'blog' },

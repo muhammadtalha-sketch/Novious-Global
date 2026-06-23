@@ -21,7 +21,40 @@
 .products-header p {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
+  margin: 0 0 var(--spacing-lg);
+}
+
+.products-badges {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.products-feature-badge {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+}
+
+.moq-notice {
+  background: #fff8e1;
+  border-left: 4px solid #f59e0b;
+  padding: var(--spacing-md) var(--spacing-xl);
+  text-align: center;
+}
+
+.moq-notice p {
+  color: #92400e;
+  font-size: 0.9rem;
   margin: 0;
+  font-weight: 500;
 }
 
 /* Breadcrumb Navigation */
