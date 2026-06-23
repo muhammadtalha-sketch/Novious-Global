@@ -38,12 +38,12 @@ export default function ValuePropsSection() {
           We Win When You Win — Your success is our success
         </p>
 
-        <div className="value-grid">
+        <div className="why-choose-grid">
           {values.map((value, index) => {
             const IconComponent = value.icon;
             return (
-              <div key={index} className="value-card">
-                <div className="value-icon">
+              <div key={index} className="why-choose-card">
+                <div className="why-choose-icon">
                   <IconComponent size={40} />
                 </div>
                 <h3>{value.title}</h3>
