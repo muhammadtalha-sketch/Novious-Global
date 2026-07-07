@@ -1,17 +1,18 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
+import SocialIcon from './SocialIcons';
 import '../styles/Footer.css';
 
-const WHATSAPP_LINK = 'https://wa.me/923077433743';
+const WHATSAPP_LINK = 'https://wa.me/8615618483542';
 
 export default function Footer({ onNavigate }) {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { label: 'YouTube', href: 'https://www.youtube.com/@NoviousGlobal', abbr: 'YT' },
-    { label: 'Instagram', href: 'https://www.instagram.com/chinasourcing_?igsh=OHN0NXdpNGxpcTBq&utm_source=qr', abbr: 'IG' },
-    { label: 'Facebook', href: 'https://www.facebook.com/noviousglobalsourcingchina', abbr: 'FB' },
-    { label: 'TikTok', href: 'https://www.tiktok.com/@novious.global.china', abbr: 'TT' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/novious-global-sourcing-from-china/', abbr: 'LI' }
+    { label: 'YouTube', href: 'https://www.youtube.com/@NoviousGlobal', icon: 'youtube' },
+    { label: 'Instagram', href: 'https://www.instagram.com/chinasourcing_?igsh=OHN0NXdpNGxpcTBq&utm_source=qr', icon: 'instagram' },
+    { label: 'Facebook', href: 'https://www.facebook.com/noviousglobalsourcingchina', icon: 'facebook' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@novious.global.china', icon: 'tiktok' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/novious-global-sourcing-from-china/', icon: 'linkedin' }
   ];
 
   return (
@@ -41,7 +42,7 @@ export default function Footer({ onNavigate }) {
                   rel="noopener noreferrer"
                   aria-label={s.label}
                 >
-                  {s.abbr}
+                  <SocialIcon name={s.icon} size={32} />
                 </a>
               ))}
               <a
@@ -52,7 +53,7 @@ export default function Footer({ onNavigate }) {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
               >
-                WA
+                <SocialIcon name="whatsapp" size={32} />
               </a>
             </div>
           </div>
@@ -114,7 +115,7 @@ export default function Footer({ onNavigate }) {
                 <Phone size={18} />
                 <div>
                   <p className="contact-label">WhatsApp</p>
-                  <p className="contact-value"><a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">+923077433743</a></p>
+                  <p className="contact-value"><a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">+86 15618483542</a></p>
                 </div>
               </div>
             </div>
@@ -127,6 +128,10 @@ export default function Footer({ onNavigate }) {
           <div className="footer-bottom-content">
             <p className="copyright">
               &copy; {currentYear} Novious Global Co. Ltd. All rights reserved.
+              <br />
+              <a href="https://ingeniousc.com/" target="_blank" rel="noopener noreferrer" className="powered-by-link">
+                Powered by Ingenious Concepts
+              </a>
             </p>
             <div className="footer-legal">
               <a href="#privacy">Privacy Policy</a>

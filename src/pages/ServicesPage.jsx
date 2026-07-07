@@ -1,7 +1,7 @@
 import { Search, Shield, Package, Warehouse, Globe, ShoppingCart, Tag, Truck, ShoppingBag, CheckSquare, ArrowRight, MessageCircle } from 'lucide-react';
 import '../styles/ServicesPage.css';
 
-const WHATSAPP_LINK = 'https://wa.me/923077433743?text=Hi%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services.';
+const WHATSAPP_LINK = 'https://wa.me/8615618483542?text=Hi%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services.';
 
 const sourcingServices = [
   {
@@ -143,6 +143,18 @@ export default function ServicesPage({ onNavigate }) {
                 <p>{s.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Real Photos */}
+      <section className="services-gallery-section">
+        <div className="container">
+          <h2 className="section-title">Real Work, Real Results</h2>
+          <p className="section-subtitle">A look at our production oversight and client relationships on the ground in China.</p>
+          <div className="services-gallery-grid">
+            <img src="/images/real/battery-assembly-line.jpg" alt="Production line quality oversight" />
+            <img src="/images/real/client-visit-communication.jpg" alt="In-person client relationship building in China" />
           </div>
         </div>
       </section>

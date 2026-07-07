@@ -1,7 +1,7 @@
-import { Zap, Building2, Activity, Factory, Cpu, HeartPulse, Search, ShieldCheck, HardHat, CheckCircle, Truck, Headphones, Globe, ArrowRight, MessageCircle } from 'lucide-react';
+import { Zap, Building2, Activity, Factory, Cpu, HeartPulse, Search, ShieldCheck, HardHat, CheckCircle, Truck, Headphones, Globe, Network, Layers, Award, ArrowRight, MessageCircle } from 'lucide-react';
 import '../styles/ProjectBasePage.css';
 
-const WHATSAPP_LINK = 'https://wa.me/923077433743?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20project-based%20service.';
+const WHATSAPP_LINK = 'https://wa.me/8615618483542?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20project-based%20service.';
 
 const projectCategories = [
   {
@@ -75,18 +75,22 @@ const howItWorks = [
 
 const whyChooseUs = [
   {
+    icon: Network,
     title: 'Extensive Network in China',
     desc: 'Access to reliable companies across multiple industries, with a full understanding of the Chinese business environment.'
   },
   {
+    icon: Layers,
     title: 'End-to-End Solutions',
     desc: 'From sourcing and agreements to logistics and supervision, we cover the entire project process.'
   },
   {
+    icon: Award,
     title: 'Proven Experience',
     desc: 'Expertise in handling diverse, complex projects for international clients across multiple sectors.'
   },
   {
+    icon: ShieldCheck,
     title: 'Trustworthy Partner',
     desc: 'A client-first approach built on transparency, accountability, and long-term cooperation.'
   }
@@ -192,13 +196,18 @@ export default function ProjectBasePage({ onNavigate }) {
         <div className="container">
           <h2 className="section-title">Why Choose Us</h2>
           <div className="why-grid">
-            {whyChooseUs.map((w, i) => (
-              <div key={i} className="why-card">
-                <div className="why-number">{String(i + 1).padStart(2, '0')}</div>
-                <h3>{w.title}</h3>
-                <p>{w.desc}</p>
-              </div>
-            ))}
+            {whyChooseUs.map((w, i) => {
+              const WhyIcon = w.icon;
+              return (
+                <div key={i} className="why-card">
+                  <div className="why-icon">
+                    <WhyIcon size={28} />
+                  </div>
+                  <h3>{w.title}</h3>
+                  <p>{w.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Send, MessageCircle, Globe } from 'lucide-react';
+import SocialIcon from '../components/SocialIcons';
 import '../styles/ContactPage.css';
 
-const WHATSAPP_NUMBER = '923077433743';
+const WHATSAPP_NUMBER = '8615618483542';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
+const WHATSAPP_NUMBER_PK = '923077433743';
+const WHATSAPP_LINK_PK = `https://wa.me/${WHATSAPP_NUMBER_PK}`;
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -62,9 +65,15 @@ export default function ContactPage() {
     },
     {
       icon: MessageCircle,
-      title: 'WhatsApp',
-      details: '+923077433743',
+      title: 'WhatsApp (China)',
+      details: '+86 156 1848 3542',
       link: WHATSAPP_LINK
+    },
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp (Pakistan)',
+      details: '+92 307 7433743',
+      link: WHATSAPP_LINK_PK
     },
     {
       icon: Globe,
@@ -75,11 +84,11 @@ export default function ContactPage() {
   ];
 
   const socialLinks = [
-    { label: 'YouTube', href: 'https://www.youtube.com/@NoviousGlobal', icon: '▶' },
-    { label: 'Instagram', href: 'https://www.instagram.com/chinasourcing_?igsh=OHN0NXdpNGxpcTBq&utm_source=qr', icon: '📸' },
-    { label: 'Facebook', href: 'https://www.facebook.com/noviousglobalsourcingchina', icon: 'f' },
-    { label: 'TikTok', href: 'https://www.tiktok.com/@novious.global.china', icon: '♪' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/novious-global-sourcing-from-china/', icon: 'in' }
+    { label: 'YouTube', href: 'https://www.youtube.com/@NoviousGlobal', icon: 'youtube' },
+    { label: 'Instagram', href: 'https://www.instagram.com/chinasourcing_?igsh=OHN0NXdpNGxpcTBq&utm_source=qr', icon: 'instagram' },
+    { label: 'Facebook', href: 'https://www.facebook.com/noviousglobalsourcingchina', icon: 'facebook' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@novious.global.china', icon: 'tiktok' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/novious-global-sourcing-from-china/', icon: 'linkedin' }
   ];
 
   const faqs = [
@@ -131,7 +140,7 @@ export default function ContactPage() {
                 <div className="info-content">
                   <h3>{info.title}</h3>
                   {info.link ? (
-                    <a href={info.link} className="info-link" target={info.title === 'WhatsApp' ? '_blank' : undefined} rel="noopener noreferrer">{info.details}</a>
+                    <a href={info.link} className="info-link" target={info.title.startsWith('WhatsApp') ? '_blank' : undefined} rel="noopener noreferrer">{info.details}</a>
                   ) : (
                     <p>{info.details}</p>
                   )}
@@ -160,7 +169,7 @@ export default function ContactPage() {
             <div className="social-links-list">
               {socialLinks.map((s, i) => (
                 <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="social-link-item">
-                  <span className="social-icon-text">{s.icon}</span>
+                  <SocialIcon name={s.icon} size={28} />
                   {s.label}
                 </a>
               ))}
@@ -292,6 +301,20 @@ export default function ContactPage() {
           </div>
         </main>
       </div>
+
+      {/* Real Photos Grid */}
+      <section className="contact-gallery-section">
+        <div className="container">
+          <h2>Meet Us on the Ground in China</h2>
+          <p className="section-subtitle">Real visits with our clients and manufacturing partners</p>
+          <div className="contact-gallery-grid">
+            <img src="/images/real/contact-grid-1.jpg" alt="Client visit in China" />
+            <img src="/images/real/contact-grid-2.jpg" alt="Supplier factory visit" />
+            <img src="/images/real/contact-grid-3.jpg" alt="Client facility visit and project briefing" />
+            <img src="/images/real/contact-grid-4.jpg" alt="Client meeting at Novious Global office" />
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="faq-section">

@@ -43,10 +43,51 @@
 .sourcing-section .container,
 .solutions-section .container,
 .how-it-works-section .container,
+.services-gallery-section .container,
 .services-cta .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
+}
+
+/* ── Real Photos ──────────────────────────────────────── */
+.services-gallery-section {
+  padding: var(--spacing-4xl) 0;
+}
+
+.services-gallery-section .section-title,
+.services-gallery-section .section-subtitle {
+  text-align: center;
+}
+
+.services-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: 2rem;
+}
+
+.services-gallery-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.services-gallery-grid img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .services-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-gallery-grid img {
+    height: 220px;
+  }
 }
 
 /* ── Core Services Grid — 5 columns desktop ──────────── */
@@ -210,13 +251,18 @@
   border-color: var(--primary);
 }
 
-/* Large faded number — top-left, no circle */
+/* Pill badge number, matching the reference "PROJECT-BASED SERVICES" button style */
 .step-num {
-  font-size: 2rem;
-  font-weight: 800;
-  color: rgba(230, 57, 70, 0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: white;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
   line-height: 1;
-  display: block;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-full, 20px);
+  align-self: flex-start;
 }
 
 .step-card h3 {

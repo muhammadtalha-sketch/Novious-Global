@@ -7,7 +7,7 @@ export default function HeroSection({ onNavigate }) {
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <div className="hero-text">
-          <p className="hero-tagline">WE SOURCE &nbsp;|&nbsp; YOU GROW</p>
+          <p className="hero-tagline">Product-Based Services</p>
           <h1 className="hero-title">
             Your Trusted Sourcing Partner in China
           </h1>
@@ -75,7 +75,7 @@ export default function HeroSection({ onNavigate }) {
         </div>
         <div className="badge">
           <span className="badge-icon">🌍</span>
-          <span>50+ Branch Offices in China</span>
+          <span>50+ Local Partners in China</span>
         </div>
       </div>
     </section>

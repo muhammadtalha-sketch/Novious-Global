@@ -1,4 +1,4 @@
-import { Users, Globe, Award, TrendingUp, ArrowRight, Building2 } from 'lucide-react';
+import { Users, Globe, Award, TrendingUp, ArrowRight, Building2, ShieldCheck, MessageSquareText, BadgeCheck, Handshake, UserRound } from 'lucide-react';
 import '../styles/AboutPage.css';
 
 export default function AboutPage({ onNavigate }) {
@@ -11,20 +11,51 @@ export default function AboutPage({ onNavigate }) {
 
   const values = [
     {
+      icon: ShieldCheck,
       title: 'Reliability',
       description: 'Every supplier undergoes rigorous verification and background checks to ensure legitimacy and quality.'
     },
     {
+      icon: MessageSquareText,
       title: 'Transparency',
       description: 'We provide honest communication and transparent pricing throughout the entire sourcing process.'
     },
     {
+      icon: BadgeCheck,
       title: 'Quality',
       description: 'Comprehensive quality control and inspection at every stage of production and before shipment.'
     },
     {
+      icon: Handshake,
       title: 'Partnership',
       description: 'We succeed when our clients succeed — long-term relationships built on integrity and client success.'
+    }
+  ];
+
+  const leadership = [
+    {
+      name: 'Hamid',
+      role: 'Founder & CEO',
+      photo: '/images/team/hamid-founder.jpg',
+      bio: 'Founded Novious Global to make China sourcing transparent and reliable.'
+    },
+    {
+      name: 'Abdul Rehman',
+      role: 'Operations Manager',
+      photo: null,
+      bio: 'Oversees daily operations and supplier relationship management.'
+    },
+    {
+      name: 'Jack Wang',
+      role: 'Sourcing Expert',
+      photo: null,
+      bio: 'Local market expert matching clients with the right verified factories.'
+    },
+    {
+      name: 'Williamson',
+      role: 'Client Relations',
+      photo: null,
+      bio: 'Your dedicated point of contact from quote to delivery.'
     }
   ];
 
@@ -65,7 +96,7 @@ export default function AboutPage({ onNavigate }) {
         <div className="container">
           <div className="founder-content">
             <div className="founder-image-wrapper">
-              <div className="founder-image-placeholder">H</div>
+              <img src="/images/team/hamid-founder.jpg" alt="Hamid — Founder & CEO" className="founder-photo" />
             </div>
             <div className="founder-text">
               <h2>About Our Founder &amp; CEO</h2>
@@ -148,10 +179,42 @@ export default function AboutPage({ onNavigate }) {
         <div className="container">
           <h2>Our Core Values</h2>
           <div className="values-grid">
-            {values.map((value, index) => (
-              <div key={index} className="value-card">
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
+            {values.map((value, index) => {
+              const ValueIcon = value.icon;
+              return (
+                <div key={index} className="core-value-card">
+                  <div className="core-value-icon">
+                    <ValueIcon size={28} />
+                  </div>
+                  <h3>{value.title}</h3>
+                  <p>{value.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Our Leadership */}
+      <section className="leadership-section">
+        <div className="container">
+          <h2>Meet Our Leadership</h2>
+          <p className="section-subtitle">The people behind our successful sourcing partnerships.</p>
+          <div className="leadership-grid">
+            {leadership.map((person, index) => (
+              <div key={index} className="leadership-card">
+                <div className="leadership-photo-wrapper">
+                  {person.photo ? (
+                    <img src={person.photo} alt={person.name} className="leadership-photo" />
+                  ) : (
+                    <div className="leadership-avatar-placeholder" aria-label="Generic placeholder avatar, photo coming soon">
+                      <UserRound size={44} strokeWidth={1.5} />
+                    </div>
+                  )}
+                </div>
+                <h3>{person.name}</h3>
+                <p className="leadership-role">{person.role}</p>
+                <p className="leadership-bio">{person.bio}</p>
               </div>
             ))}
           </div>
@@ -169,12 +232,12 @@ export default function AboutPage({ onNavigate }) {
               <p className="contact-info">
                 Phone: +86 15618483542<br />
                 Email: info@noviousglobal.com<br />
-                WhatsApp: +923077433743
+                WhatsApp: +8615618483542
               </p>
               <p className="description">
                 Our experienced team is ready to assist you with your sourcing needs. We have established
-                relationships with manufacturers across all major industrial zones in China, with 50+ branch
-                offices giving us unmatched reach and local knowledge.
+                relationships with manufacturers across all major industrial zones in China, with 50+ local
+                partners giving us unmatched reach and local knowledge.
               </p>
             </div>
             <div className="network-map">
@@ -214,19 +277,19 @@ export default function AboutPage({ onNavigate }) {
         <div className="container">
           <div className="about-gallery-grid">
             <div className="about-gallery-item">
-              <img src="/images/About-Us.jpg" alt="Novious Global Team" />
+              <img src="/images/real/team-chuhan-visit.jpg" alt="Novious Global Team" />
               <div className="gallery-overlay">
                 <p>Our Team in Shanghai</p>
               </div>
             </div>
             <div className="about-gallery-item">
-              <img src="/images/Supplier-Network.jpg" alt="Supplier Network" />
+              <img src="/images/real/supplier-network-visit.jpg" alt="Supplier Network" />
               <div className="gallery-overlay">
                 <p>Verified Supplier Network</p>
               </div>
             </div>
             <div className="about-gallery-item">
-              <img src="/images/Quality-Assurance.jpg" alt="Quality Assurance" />
+              <img src="/images/real/quality-assurance-line.jpg" alt="Quality Assurance" />
               <div className="gallery-overlay">
                 <p>Quality Assurance Process</p>
               </div>

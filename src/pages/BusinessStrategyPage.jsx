@@ -1,7 +1,8 @@
 import { BarChart2, Search, Share2, Monitor, Users, Globe, FileText, ArrowRight } from 'lucide-react';
+import SocialIcon from '../components/SocialIcons';
 import '../styles/BusinessStrategyPage.css';
 
-const WHATSAPP_LINK = 'https://wa.me/923077433743?text=Hi%2C%20I%20am%20interested%20in%20your%20Business%20Strategy%20services.';
+const WHATSAPP_LINK = 'https://wa.me/8615618483542?text=Hi%2C%20I%20am%20interested%20in%20your%20Business%20Strategy%20services.';
 
 export default function BusinessStrategyPage({ onNavigate }) {
   const digitalServices = [
@@ -122,8 +123,18 @@ export default function BusinessStrategyPage({ onNavigate }) {
           <div className="platforms-row">
             <h3>Platforms We Work With</h3>
             <div className="platforms-list">
-              {['Facebook', 'Instagram', 'TikTok', 'Google Ads', 'LinkedIn', 'YouTube'].map((p, i) => (
-                <span key={i} className="platform-tag">{p}</span>
+              {[
+                { name: 'Facebook', icon: 'facebook' },
+                { name: 'Instagram', icon: 'instagram' },
+                { name: 'TikTok', icon: 'tiktok' },
+                { name: 'Google Ads', icon: 'googleads' },
+                { name: 'LinkedIn', icon: 'linkedin' },
+                { name: 'YouTube', icon: 'youtube' }
+              ].map((p, i) => (
+                <span key={i} className="platform-tag">
+                  <SocialIcon name={p.icon} size={22} glyphSize={13} />
+                  {p.name}
+                </span>
               ))}
             </div>
           </div>

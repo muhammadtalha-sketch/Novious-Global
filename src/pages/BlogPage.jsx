@@ -1,7 +1,7 @@
 import { ArrowRight, BookOpen } from 'lucide-react';
 import '../styles/BlogPage.css';
 
-const WHATSAPP_LINK = 'https://wa.me/923077433743';
+const WHATSAPP_LINK = 'https://wa.me/8615618483542';
 
 const placeholderPosts = [
   {

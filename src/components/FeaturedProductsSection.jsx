@@ -42,7 +42,7 @@ export default function FeaturedProductsSection({ onNavigate }) {
                 <div className="product-footer">
                   <span className="moq-info">MOQ: {product.moq}</span>
                   <a
-                    href={`https://wa.me/923077433743?text=${encodeURIComponent(`Hi, I am interested in ${product.name}. Please provide a quote.`)}`}
+                    href={`https://wa.me/8615618483542?text=${encodeURIComponent(`Hi, I am interested in ${product.name}. Please provide a quote.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="product-quote-btn"

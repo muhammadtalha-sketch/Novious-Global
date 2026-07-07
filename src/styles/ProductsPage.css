@@ -57,6 +57,82 @@
   font-weight: 500;
 }
 
+/* Why Buy Trust Panel */
+.why-buy-panel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.why-buy-panel h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  flex-shrink: 0;
+  color: var(--neutral-text);
+}
+
+.why-buy-panel h2 span {
+  color: var(--primary);
+}
+
+.why-buy-grid {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.why-buy-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+  min-width: 80px;
+}
+
+.why-buy-icon {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-buy-item span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--neutral-text);
+}
+
+@media (max-width: 768px) {
+  .why-buy-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--spacing-lg);
+  }
+
+  .why-buy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: stretch;
+    width: 100%;
+  }
+
+  .why-buy-item {
+    min-width: 0;
+  }
+}
+
 /* Breadcrumb Navigation */
 .breadcrumb {
   display: flex;

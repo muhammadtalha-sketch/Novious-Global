@@ -5,8 +5,8 @@ export default function ValuePropsSection() {
   const values = [
     {
       icon: Globe,
-      title: '50+ Branch Offices',
-      description: 'Extensive network in China with access to reliable companies across multiple industries and full understanding of the Chinese business environment.'
+      title: '50+ Local Partners',
+      description: 'Extensive network of local partners across China with access to reliable companies across multiple industries and full understanding of the Chinese business environment.'
     },
     {
       icon: Clock,

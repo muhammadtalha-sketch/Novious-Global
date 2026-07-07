@@ -9,102 +9,68 @@
   margin-right: auto;
 }
 
-.steps-container {
+/* ── Steps — matches Services/Project page "Why Choose Us" card style ── */
+.how-it-works .steps-row {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  position: relative;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
   align-items: stretch;
 }
 
-.step {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  position: relative;
-  background: white;
+.how-it-works .step-card {
+  background: var(--neutral-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.75rem 1.5rem;
-  transition: var(--transition);
-  height: 100%;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  min-width: 0;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.step:hover {
+.how-it-works .step-card:hover {
+  box-shadow: var(--shadow-lg);
   border-color: var(--primary);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
 }
 
-.step-header {
-  display: flex;
-  align-items: flex-start;
-}
-
-.step-icon-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  flex-shrink: 0;
-}
-
-.step-number {
-  position: absolute;
-  font-size: 2.5rem;
+.how-it-works .step-num {
+  font-size: 2rem;
   font-weight: 800;
-  color: rgba(230, 57, 70, 0.1);
+  color: rgba(230, 57, 70, 0.2);
   line-height: 1;
-  z-index: 0;
+  display: block;
 }
 
-.step-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  z-index: 1;
-  box-shadow: var(--shadow-lg);
-  flex-shrink: 0;
+.how-it-works .step-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--neutral-text);
+  margin: 0;
+  line-height: 1.35;
+  overflow-wrap: break-word;
 }
 
-.step-content {
+.how-it-works .step-card p {
+  font-size: 0.9rem;
+  color: var(--neutral-light);
+  line-height: 1.65;
+  margin: 0;
+  overflow-wrap: break-word;
   flex: 1;
 }
 
-.step-content h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.625rem;
-  color: var(--neutral-text);
-  line-height: 1.35;
-}
-
-.step-content p {
-  color: var(--neutral-light);
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-.step-connector {
-  display: none;
-}
-
-/* Tablet — 2 columns × 3 rows */
+/* Tablet — 2 columns */
 @media (max-width: 1024px) {
   .how-it-works {
     padding: var(--spacing-3xl) 0;
   }
 
-  .steps-container {
+  .how-it-works .steps-row {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
@@ -112,42 +78,9 @@
 
 /* Mobile — 1 column */
 @media (max-width: 600px) {
-  .steps-container {
+  .how-it-works .steps-row {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 0 var(--spacing-md);
-  }
-
-  .step {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 1.25rem;
-    gap: 1rem;
-  }
-
-  .step-header {
-    flex-shrink: 0;
-  }
-
-  .step-icon-wrapper {
-    width: 56px;
-  }
-
-  .step-number {
-    font-size: 1.75rem;
-  }
-
-  .step-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .step-content h3 {
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .step-content p {
-    font-size: 0.875rem;
   }
 }

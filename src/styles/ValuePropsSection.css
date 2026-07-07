@@ -105,9 +105,6 @@
 
   .why-choose-card {
     padding: 1.25rem;
-    flex-direction: row;
-    text-align: left;
-    align-items: flex-start;
   }
 
   .why-choose-icon {

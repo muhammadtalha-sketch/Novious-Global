@@ -62,33 +62,12 @@
 }
 
 .social-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  transition: var(--transition-fast);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
-  font-size: 0.7rem;
-  font-weight: 700;
   text-decoration: none;
-  letter-spacing: 0;
-}
-
-.social-icon:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  transform: translateY(-2px);
-  color: white;
-}
-
-.social-icon.whatsapp-icon:hover {
-  background-color: #25D366;
-  border-color: #25D366;
+  line-height: 0;
 }
 
 /* Footer Links */
@@ -182,6 +161,19 @@
 .copyright {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.powered-by-link {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.powered-by-link:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 .footer-legal {
@@ -263,5 +255,15 @@
 
   .contact-item {
     gap: 0.75rem;
+  }
+
+  .social-links {
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+  }
+
+  .social-links .brand-icon-badge {
+    width: 32px;
+    height: 32px;
   }
 }

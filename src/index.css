@@ -314,3 +314,19 @@ section {
     max-width: 1400px;
   }
 }
+
+/* Shared brand/social icon badge (used in Footer, Contact, Business Strategy) */
+.brand-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+a:hover > .brand-icon-badge,
+.brand-icon-badge:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}

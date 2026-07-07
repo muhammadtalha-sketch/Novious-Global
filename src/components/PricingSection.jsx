@@ -1,7 +1,7 @@
 import { MessageCircle, Check } from 'lucide-react';
 import '../styles/PricingSection.css';
 
-const WHATSAPP_NUMBER = '923077433743';
+const WHATSAPP_NUMBER = '8615618483542';
 const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const packages = [

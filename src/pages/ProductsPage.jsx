@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Filter, Grid, List, Search, MessageCircle } from 'lucide-react';
+import { Filter, Grid, List, Search, MessageCircle, ShieldCheck, Layers, ScanSearch, BadgeDollarSign, Truck, Headset } from 'lucide-react';
 import '../styles/ProductsPage.css';
 import PRODUCTS from '../data/products';
 
-const WHATSAPP_LINK = 'https://wa.me/923077433743?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20a%20product.';
+const WHATSAPP_LINK = 'https://wa.me/8615618483542?text=Hi%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20a%20product.';
 
 export default function ProductsPage({ onSelectProduct }) {
   const [view, setView] = useState('grid');
@@ -21,6 +21,15 @@ export default function ProductsPage({ onSelectProduct }) {
     return matchesCategory && matchesSearch;
   });
 
+  const trustPoints = [
+    { icon: ShieldCheck, label: 'Verified Manufacturers' },
+    { icon: Layers, label: 'OEM & ODM Solutions' },
+    { icon: ScanSearch, label: 'Quality Inspection' },
+    { icon: BadgeDollarSign, label: 'Competitive Pricing' },
+    { icon: Truck, label: 'Worldwide Shipping' },
+    { icon: Headset, label: 'Dedicated Support' }
+  ];
+
   return (
     <div className="products-page">
       {/* Header */}
@@ -37,6 +46,26 @@ export default function ProductsPage({ onSelectProduct }) {
       {/* MOQ Notice */}
       <div className="moq-notice">
         <p>We source products for any order size. However, some of the products require a Minimum Order Quantity (MOQ). Contact us to confirm details for your specific product.</p>
+      </div>
+
+      {/* Why Buy From Us Trust Panel */}
+      <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%', padding: 'var(--spacing-lg)' }}>
+        <div className="why-buy-panel">
+          <h2>Why Buy From <span>Novious Global</span>?</h2>
+          <div className="why-buy-grid">
+            {trustPoints.map((point, index) => {
+              const IconComponent = point.icon;
+              return (
+                <div key={index} className="why-buy-item">
+                  <div className="why-buy-icon">
+                    <IconComponent size={22} />
+                  </div>
+                  <span>{point.label}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       {/* Main Container with Breadcrumb */}
@@ -149,7 +178,7 @@ export default function ProductsPage({ onSelectProduct }) {
                       </div>
                     </div>
                     <a
-                      href={`https://wa.me/923077433743?text=${encodeURIComponent(`Hi, I am interested in ${product.name}. Please provide a quote.`)}`}
+                      href={`https://wa.me/8615618483542?text=${encodeURIComponent(`Hi, I am interested in ${product.name}. Please provide a quote.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="request-quote-btn"
