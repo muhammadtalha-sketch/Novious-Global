@@ -5,8 +5,6 @@ import '../styles/ContactPage.css';
 
 const WHATSAPP_NUMBER = '8615618483542';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
-const WHATSAPP_NUMBER_PK = '923077433743';
-const WHATSAPP_LINK_PK = `https://wa.me/${WHATSAPP_NUMBER_PK}`;
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -59,21 +57,21 @@ export default function ContactPage() {
     },
     {
       icon: Phone,
-      title: 'Phone',
+      title: 'Phone (China)',
       details: '+86 15618483542',
       link: 'tel:+8615618483542'
+    },
+    {
+      icon: Phone,
+      title: 'Phone (Pakistan)',
+      details: '+92 307 7433743',
+      link: 'tel:+923077433743'
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp (China)',
       details: '+86 156 1848 3542',
       link: WHATSAPP_LINK
-    },
-    {
-      icon: MessageCircle,
-      title: 'WhatsApp (Pakistan)',
-      details: '+92 307 7433743',
-      link: WHATSAPP_LINK_PK
     },
     {
       icon: Globe,

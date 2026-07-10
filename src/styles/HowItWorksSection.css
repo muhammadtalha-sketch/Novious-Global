@@ -41,7 +41,11 @@
 .how-it-works .step-num {
   font-size: 2rem;
   font-weight: 800;
-  color: rgb(255, 255, 255);
+  color: white;
+  /* `background` shorthand (not background-color) so it overrides the
+     navy linear-gradient that the unscoped `.step-num` rule in
+     ServicesPage.css leaks in — keeps this badge solid brand red. */
+  background: var(--primary);
   line-height: 1;
   display: block;
 }

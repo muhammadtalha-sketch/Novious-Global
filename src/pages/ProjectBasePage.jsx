@@ -212,6 +212,19 @@ export default function ProjectBasePage({ onNavigate }) {
         </div>
       </section>
 
+      {/* Project Showcase — real project case studies, one horizontal frame [1][2][3][4]
+          that stays horizontal on mobile per client request */}
+      <section className="project-showcase-section">
+        <div className="container">
+          <div className="project-showcase-frame">
+            <img src="/images/real/project-1.jpg" alt="Padel court project — supply, galvanized steel, tempered glass and pre-shipping inspection" />
+            <img src="/images/real/project-2.jpg" alt="Helped a Malaysian client sign a contract with one of our suppliers" />
+            <img src="/images/real/project-3.jpg" alt="Helped a Turkish client sign a contract with one of our suppliers" />
+            <img src="/images/real/project-4.jpg" alt="Sourced food metal detectors, EV charging stations, industrial robots and lithium batteries" />
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="project-cta-section">
         <div className="container">

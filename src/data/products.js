@@ -1,29 +1,34 @@
 const p = (path) => encodeURI(path);
 
 const PRODUCTS = [
-  // CLOTHING & TEXTILE
-  { id: 1,  name: 'Cotton T-Shirt (Men & Women)',   category: 'Clothing & Textile', moq: '500 units', rating: 4.5, reviews: 267, image: p('/images/products/Clothing & Textiles/Clothing/Clothing (9).png'), badge: null },
-  { id: 2,  name: "Men's Linen Shirt & Shorts Set", category: 'Clothing & Textile', moq: '200 units', rating: 4.7, reviews: 198, image: p('/images/products/Clothing & Textiles/Clothing/Clothing (3).png'), badge: null },
-  { id: 3,  name: 'Winter Jacket',                  category: 'Clothing & Textile', moq: '100 units', rating: 4.8, reviews: 145, image: p('/images/products/Clothing & Textiles/Clothing/Clothing (7).png'), badge: null },
-  { id: 4,  name: 'Fleece Bed Blanket',             category: 'Clothing & Textile', moq: '300 units', rating: 4.6, reviews: 234, image: p('/images/products/Clothing & Textiles/Textile/Textile (1).jpg'), badge: null },
-  { id: 5,  name: 'Home Textile Set',               category: 'Clothing & Textile', moq: '150 units', rating: 4.9, reviews: 156, image: p('/images/products/Clothing & Textiles/Textile/Textile (3).jpg'), badge: null },
-  { id: 6,  name: "Women's Streetwear Co-ord Set",  category: 'Clothing & Textile', moq: '200 units', rating: 4.7, reviews: 189, image: p('/images/products/Clothing & Textiles/Clothing/Clothing (5).png'), badge: null },
+  // GARMENTS & TEXTILE (replaced with client-supplied folder images + names — round 2.2)
+  { id: 201, name: 'Cargo Pants Fashion Men',                      category: 'Garments & Textile', moq: '200 units', rating: 4.6, reviews: 142, image: p('/images/products/Clothing & Textiles/new-changes/Cargo Pants Fashion Men.jpg'), badge: null },
+  { id: 202, name: "European American Winter New Fashion Women's", category: 'Garments & Textile', moq: '150 units', rating: 4.7, reviews: 168, image: p("/images/products/Clothing & Textiles/new-changes/European American Winter New Fashion Women's.jpg"), badge: null },
+  { id: 203, name: 'Ladies Nightwear',                             category: 'Garments & Textile', moq: '300 units', rating: 4.5, reviews: 121, image: p('/images/products/Clothing & Textiles/new-changes/Ladies Nightwear.jpg'), badge: null },
+  { id: 204, name: 'Men Loose Casual Outfit',                      category: 'Garments & Textile', moq: '200 units', rating: 4.6, reviews: 134, image: p('/images/products/Clothing & Textiles/new-changes/Men Loose Casual Outfit.jpg'), badge: null },
+  { id: 205, name: "Men's Classic School Team Jacket",             category: 'Garments & Textile', moq: '150 units', rating: 4.8, reviews: 156, image: p("/images/products/Clothing & Textiles/new-changes/Men's Classic School Team Jacket.jpg"), badge: null },
+  { id: 206, name: 'Retro-style wide-leg jeans women',             category: 'Garments & Textile', moq: '200 units', rating: 4.7, reviews: 145, image: p('/images/products/Clothing & Textiles/new-changes/Retro-style wide-leg jeans women.jpg'), badge: null },
+  { id: 207, name: 'Sweatshirt Jacket Zipper Hoodie Apricot',      category: 'Garments & Textile', moq: '250 units', rating: 4.6, reviews: 178, image: p('/images/products/Clothing & Textiles/new-changes/Sweatshirt Jacket Zipper Hoodie Apricot.jpg'), badge: null },
+  { id: 208, name: "Velvet Jacket Men's Winter",                   category: 'Garments & Textile', moq: '120 units', rating: 4.8, reviews: 132, image: p("/images/products/Clothing & Textiles/new-changes/Velvet Jacket Men's Winter.jpg"), badge: null },
+  { id: 209, name: 'Warm Waterproof Parkas Jacket Coat',           category: 'Garments & Textile', moq: '100 units', rating: 4.8, reviews: 167, image: p('/images/products/Clothing & Textiles/new-changes/Warm Waterproof Parkas Jacket Coat.jpg'), badge: null },
+  { id: 210, name: 'Waterproof Winter Coat Male',                  category: 'Garments & Textile', moq: '100 units', rating: 4.7, reviews: 149, image: p('/images/products/Clothing & Textiles/new-changes/Waterproof Winter Coat Male.jpg'), badge: null },
+  { id: 211, name: 'Women Leather Short Jacket',                   category: 'Garments & Textile', moq: '150 units', rating: 4.7, reviews: 138, image: p('/images/products/Clothing & Textiles/new-changes/Women Leather Short Jacket.jpg'), badge: null },
+  { id: 212, name: "men Velvet Jacket Men's Winter",               category: 'Garments & Textile', moq: '120 units', rating: 4.6, reviews: 127, image: p("/images/products/Clothing & Textiles/new-changes/men Velvet Jacket Men's Winter.jpg"), badge: null },
 
-  // SHOES & WATCHES
-  { id: 7,  name: 'Stainless Steel Watch',          category: 'Shoes & Watches', moq: '50 units',  rating: 4.9, reviews: 98,  image: p('/images/products/Shoes & Watches/Watch (1).jpg'), badge: 'Best Seller' },
-  { id: 8,  name: 'Sport Running Shoes',            category: 'Shoes & Watches', moq: '100 units', rating: 4.8, reviews: 198, image: p('/images/products/Shoes & Watches/Shoes (2).jpg'), badge: null },
-  { id: 9,  name: 'Leather Casual Shoes',           category: 'Shoes & Watches', moq: '80 units',  rating: 4.7, reviews: 145, image: p('/images/products/Shoes & Watches/Shoes (1).jpg'), badge: null },
-  { id: 10, name: 'Gold Floral Bracelet Watch',     category: 'Shoes & Watches', moq: '40 units',  rating: 4.8, reviews: 167, image: p('/images/products/Shoes & Watches/Watch (2).jpg'), badge: null },
-  { id: 11, name: 'Waterproof Sports Watch',        category: 'Shoes & Watches', moq: '60 units',  rating: 4.6, reviews: 121, image: p('/images/products/Shoes & Watches/Watch (3).jpg'), badge: null },
-  { id: 12, name: 'Chunky Platform Sneakers',       category: 'Shoes & Watches', moq: '70 units',  rating: 4.9, reviews: 104, image: p('/images/products/Shoes & Watches/Shoes (5).jpg'), badge: null },
+  // SHOES & WATCHES (replaced with client-supplied folder images + names — round 2.2)
+  { id: 213, name: 'Android IOS Smart watch',              category: 'Shoes & Watches', moq: '100 units', rating: 4.7, reviews: 156, image: p('/images/products/Shoes & Watches/new-changes/Android IOS Smart watch.jpg'), badge: null },
+  { id: 214, name: 'Men LED Digital Watches',              category: 'Shoes & Watches', moq: '150 units', rating: 4.6, reviews: 134, image: p('/images/products/Shoes & Watches/new-changes/Men LED Digital Watches.jpg'), badge: null },
+  { id: 215, name: 'Men Women Sneakers Fashion Casual Shoes', category: 'Shoes & Watches', moq: '120 units', rating: 4.8, reviews: 178, image: p('/images/products/Shoes & Watches/new-changes/Men Women Sneakers Fashion Casual Shoes.jpg'), badge: null },
+  { id: 216, name: "New Men's Loafers Shoes",              category: 'Shoes & Watches', moq: '100 units', rating: 4.7, reviews: 145, image: p("/images/products/Shoes & Watches/new-changes/New Men's Loafers Shoes.jpg"), badge: null },
+  { id: 217, name: 'Smartwatch Waterproof',                category: 'Shoes & Watches', moq: '80 units',  rating: 4.6, reviews: 121, image: p('/images/products/Shoes & Watches/new-changes/Smartwatch Waterproof.jpg'), badge: null },
+  { id: 218, name: 'Sports Shoes',                         category: 'Shoes & Watches', moq: '150 units', rating: 4.8, reviews: 167, image: p('/images/products/Shoes & Watches/new-changes/Sports Shoes.jpg'), badge: null },
 
-  // BAGS & CASES
-  { id: 13, name: 'Premium Leather Handbag',        category: 'Bags & Cases', moq: '100 units', rating: 4.8, reviews: 142, image: p('/images/products/Bags & Cases/Bags (4).jpg'),  badge: 'Popular' },
-  { id: 14, name: 'Professional Laptop Backpack',   category: 'Bags & Cases', moq: '80 units',  rating: 4.7, reviews: 128, image: p('/images/products/Bags & Cases/Bags (27).jpg'), badge: null },
-  { id: 15, name: 'Travel Suitcase Set',            category: 'Bags & Cases', moq: '50 units',  rating: 4.9, reviews: 95,  image: p('/images/products/Bags & Cases/Bags (31).jpg'), badge: null },
-  { id: 16, name: 'Crossbody Shoulder Bag',         category: 'Bags & Cases', moq: '120 units', rating: 4.6, reviews: 156, image: p('/images/products/Bags & Cases/Bags (16).jpg'), badge: null },
-  { id: 17, name: 'Weekend Duffel Bag',             category: 'Bags & Cases', moq: '100 units', rating: 4.7, reviews: 112, image: p('/images/products/Bags & Cases/Bags (40).jpg'), badge: null },
-  { id: 18, name: 'Brown Leather Shoulder Handbag', category: 'Bags & Cases', moq: '150 units', rating: 4.5, reviews: 189, image: p('/images/products/Bags & Cases/Bags (26).jpg'), badge: null },
+  // BAGS & CASES (replaced with client-supplied folder images + names — round 2.2)
+  { id: 219, name: 'Business Leather Handbag',           category: 'Bags & Cases', moq: '100 units', rating: 4.8, reviews: 142, image: p('/images/products/Bags & Cases/new-changes/Business Leather Handbag.jpg'),  badge: null },
+  { id: 220, name: 'Mini Square Sling Bag',              category: 'Bags & Cases', moq: '150 units', rating: 4.6, reviews: 118, image: p('/images/products/Bags & Cases/new-changes/Mini Square Sling Bag.jpg'), badge: null },
+  { id: 221, name: 'New Shoulder bag Women bag',         category: 'Bags & Cases', moq: '120 units', rating: 4.7, reviews: 156, image: p('/images/products/Bags & Cases/new-changes/New Shoulder bag Women bag.jpg'), badge: null },
+  { id: 222, name: 'Tote Women Bag',                     category: 'Bags & Cases', moq: '100 units', rating: 4.7, reviews: 134, image: p('/images/products/Bags & Cases/new-changes/Tote Women Bag.jpg'), badge: null },
+  { id: 223, name: "women's bag portable shoulder bag",  category: 'Bags & Cases', moq: '150 units', rating: 4.5, reviews: 128, image: p("/images/products/Bags & Cases/new-changes/women's bag portable shoulder bag.jpg"), badge: null },
 
   // SPORTS
   { id: 19, name: 'Boxing Gloves & Training Mat Set', category: 'Sports', moq: '250 units', rating: 4.7, reviews: 198, image: p('/images/products/Sports & Entertainment/Sports/Sports (5).jpg'),  badge: null },
@@ -39,13 +44,14 @@ const PRODUCTS = [
   { id: 27, name: 'Layered Gold Necklace',          category: 'Jewellery', moq: '80 units',  rating: 4.8, reviews: 102, image: p('/images/products/Jewellery/jew3.jpg'), badge: null },
   { id: 28, name: 'Gemstone Watch & Bracelet Set',  category: 'Jewellery', moq: '150 units', rating: 4.7, reviews: 134, image: p('/images/products/Jewellery/wac2.jpg'), badge: null },
 
-  // PACKAGING
-  { id: 29, name: 'Bulk Roll & Carton Packaging',   category: 'Packaging', moq: '1000 units', rating: 4.6, reviews: 134, image: p('/images/products/Packaging/Packaging (1).jpg'),  badge: null },
-  { id: 30, name: 'Industrial Crate Wrap Packaging', category: 'Packaging', moq: '2000 units', rating: 4.5, reviews: 167, image: p('/images/products/Packaging/Packaging (2).jpg'),  badge: null },
-  { id: 31, name: 'Custom Wooden Crate Packaging',  category: 'Packaging', moq: '500 units',  rating: 4.7, reviews: 112, image: p('/images/products/Packaging/Packaging (3).jpg'), badge: null },
-  { id: 32, name: 'Printed Paper Shopping Bags',    category: 'Packaging', moq: '1000 units', rating: 4.8, reviews: 98,  image: p('/images/products/Bags & Cases/Bags (44).jpg'), badge: null },
-  { id: 33, name: 'Labeled Export Packaging Sacks', category: 'Packaging', moq: '500 units',  rating: 4.6, reviews: 145, image: p('/images/products/Packaging/Packaging (4).jpg'), badge: null },
-  { id: 34, name: 'Labeled Shipping Carton Boxes',  category: 'Packaging', moq: '1000 units', rating: 4.5, reviews: 89,  image: p('/images/products/Packaging/Packaging (1).jpg'), badge: null },
+  // PACKAGING (replaced with real packaging products from client folder — round 2.2;
+  // the previous shipment/container photos were moved out per "these are not packaging products")
+  { id: 224, name: 'Creative Leather Portable Gift Box',        category: 'Packaging', moq: '500 units',  rating: 4.7, reviews: 112, image: p('/images/products/Packaging/new-changes/Creative Leather Portable Gift Box.jpg'), badge: null },
+  { id: 225, name: 'Kraft Paper Self Sealing Bag, Reusable Sealed Bag', category: 'Packaging', moq: '1000 units', rating: 4.6, reviews: 134, image: p('/images/products/Packaging/new-changes/Kraft Paper Self Sealing Bag, Reusable Sealed Bag.jpg'), badge: null },
+  { id: 226, name: 'Pizza Boxes Thick Corrugated Pizza Boxes',  category: 'Packaging', moq: '1000 units', rating: 4.5, reviews: 98,  image: p('/images/products/Packaging/new-changes/Pizza Boxes Thick Corrugated Pizza Boxes.jpg'), badge: null },
+  { id: 227, name: 'Product Package Pouch Bag, Custom Printing', category: 'Packaging', moq: '1000 units', rating: 4.7, reviews: 145, image: p('/images/products/Packaging/new-changes/Product Package Pouch Bag, Custom Printing..jpg'), badge: null },
+  { id: 228, name: 'Shopping Bag Gift Bag',                     category: 'Packaging', moq: '1000 units', rating: 4.8, reviews: 156, image: p('/images/products/Packaging/new-changes/Shopping Bag Gift Bag.jpg'), badge: null },
+  { id: 229, name: 'Thickened Matte Tote Bags Clothing Gift Packaging Bags Holiday Party Birthday Gift Bags', category: 'Packaging', moq: '500 units', rating: 4.6, reviews: 89, image: p('/images/products/Packaging/new-changes/Thickened Matte Tote Bags Clothing Gift Packaging Bags Holiday Party Birthday Gift Bags.jpg'), badge: null },
 
   // KITCHEN
   { id: 35, name: 'Modern Kitchen Utensil Set',     category: 'Kitchen', moq: '200 units', rating: 4.7, reviews: 156, image: p('/images/products/Kitchen/Kitchen (1).jpg'),  badge: 'Trending' },
@@ -122,10 +128,7 @@ const PRODUCTS = [
   { id: 90, name: '15W Wireless Car Charger & Phone Holder', category: 'Electronics', moq: '300 units', rating: 4.7, reviews: 145, image: p('/images/products/Electronics/ae-electronics-4.jpg'), badge: null },
   { id: 91, name: 'Mini Tripod with Phone Clip',            category: 'Electronics', moq: '500 units', rating: 4.5, reviews: 123, image: p('/images/products/Electronics/ae-electronics-5.jpg'), badge: null },
   { id: 92, name: 'Telescopic Bluetooth Selfie Stick',      category: 'Electronics', moq: '300 units', rating: 4.6, reviews: 156, image: p('/images/products/Electronics/ae-electronics-6.jpg'), badge: null },
-  { id: 93, name: 'Magnetic Car Phone Mount (360° Rotating)', category: 'Electronics', moq: '400 units', rating: 4.7, reviews: 178, image: p('/images/products/Electronics/ae-electronics-7.jpg'), badge: null },
-
-  // CLOTHING & TEXTILE (new additions)
-  { id: 94, name: 'Anti-Slip Cotton Yoga Socks (3-Pair Pack)', category: 'Clothing & Textile', moq: '500 units', rating: 4.6, reviews: 134, image: p('/images/products/Clothing & Textiles/ae-clothing-1.jpg'), badge: null }
+  { id: 93, name: 'Magnetic Car Phone Mount (360° Rotating)', category: 'Electronics', moq: '400 units', rating: 4.7, reviews: 178, image: p('/images/products/Electronics/ae-electronics-7.jpg'), badge: null }
 ];
 
 export default PRODUCTS;

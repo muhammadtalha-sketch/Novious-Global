@@ -73,15 +73,50 @@
   background: var(--neutral-bg);
 }
 
+.project-showcase-section {
+  padding: var(--spacing-4xl) 0;
+  background: var(--neutral-bg);
+}
+
 .project-intro-section .container,
 .project-categories-section .container,
 .value-section .container,
 .project-how-section .container,
 .project-why-section .container,
+.project-showcase-section .container,
 .project-cta-section .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
+}
+
+/* Real project case studies in a single horizontal frame [1][2][3][4].
+   Stays horizontal (never stacks) on mobile per client request. */
+.project-showcase-frame {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.project-showcase-frame img {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .project-showcase-frame {
+    gap: var(--spacing-xs);
+  }
+
+  .project-showcase-frame img {
+    border-radius: var(--radius-sm);
+  }
 }
 
 /* ── Intro ───────────────────────────────────────────── */
@@ -295,7 +330,8 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+  /* Solid brand red to match the Home/Services badges (navy -> red) */
+  background: var(--primary);
   color: white;
 }
 

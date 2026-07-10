@@ -265,6 +265,18 @@
   align-self: flex-start;
 }
 
+/* How It Works badges match the Home page style: large solid red pill,
+   white number. `background` shorthand clears the navy gradient above. */
+.how-it-works-section .step-num {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: normal;
+  color: white;
+  background: var(--primary);
+  line-height: 1;
+  display: block;
+}
+
 .step-card h3 {
   font-size: 1rem;
   font-weight: 700;

@@ -132,7 +132,7 @@ export default function BusinessStrategyPage({ onNavigate }) {
                 { name: 'YouTube', icon: 'youtube' }
               ].map((p, i) => (
                 <span key={i} className="platform-tag">
-                  <SocialIcon name={p.icon} size={22} glyphSize={13} />
+                  <SocialIcon name={p.icon} size={40} glyphSize={25} />
                   {p.name}
                 </span>
               ))}

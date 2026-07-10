@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Filter, Grid, List, Search, MessageCircle, ShieldCheck, Layers, ScanSearch, BadgeDollarSign, Truck, Headset } from 'lucide-react';
 import '../styles/ProductsPage.css';
 import PRODUCTS from '../data/products';
@@ -9,6 +9,19 @@ export default function ProductsPage({ onSelectProduct }) {
   const [view, setView] = useState('grid');
   const [selectedCategory, setSelectedCategory] = useState('All Products');
   const [searchTerm, setSearchTerm] = useState('');
+  const productsMainRef = useRef(null);
+
+  const handleCategorySelect = (cat) => {
+    setSelectedCategory(cat);
+    // On mobile the category list stacks ABOVE the products, so tapping a
+    // category would otherwise leave results below the fold. Jump to the
+    // products area so they appear immediately without manual scrolling.
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      requestAnimationFrame(() => {
+        productsMainRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  };
 
   const categories = [
     'All Products',
@@ -51,7 +64,6 @@ export default function ProductsPage({ onSelectProduct }) {
       {/* Why Buy From Us Trust Panel */}
       <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%', padding: 'var(--spacing-lg)' }}>
         <div className="why-buy-panel">
-          <h2>Why Buy From <span>Novious Global</span>?</h2>
           <div className="why-buy-grid">
             {trustPoints.map((point, index) => {
               const IconComponent = point.icon;
@@ -106,7 +118,7 @@ export default function ProductsPage({ onSelectProduct }) {
                 <button
                   key={index}
                   className={`category-btn ${selectedCategory === cat ? 'active' : ''}`}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => handleCategorySelect(cat)}
                 >
                   {cat}
                 </button>
@@ -130,7 +142,7 @@ export default function ProductsPage({ onSelectProduct }) {
         </aside>
 
         {/* Main Content */}
-        <main className="products-main">
+        <main className="products-main" ref={productsMainRef}>
           {/* View Controls */}
           <div className="view-controls">
             <p className="result-count">
