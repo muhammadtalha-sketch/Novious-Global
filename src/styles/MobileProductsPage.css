@@ -1,0 +1,347 @@
+/* ============================================================
+   Mobile Products Page
+   Mobile-first layout, rendered only on phones (<=768px) via
+   useIsMobile. Shares product data + design tokens with desktop.
+   ============================================================ */
+
+.m-products {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--neutral-bg);
+  padding-bottom: 5.5rem; /* room for the floating CTA */
+}
+
+/* ---------- Hero ---------- */
+.m-products-hero {
+  background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
+  color: #fff;
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+  text-align: center;
+}
+
+.m-products-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 var(--spacing-xs);
+}
+
+.m-products-hero p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 auto var(--spacing-md);
+  max-width: 32ch;
+}
+
+.m-products-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+.m-products-badges span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.m-trust-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.m-trust-strip svg {
+  color: var(--accent-light);
+  flex-shrink: 0;
+}
+
+/* ---------- Sticky controls (search + category chips) ---------- */
+.m-sticky-controls {
+  position: sticky;
+  top: 68px; /* clears the sticky site header on mobile */
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: var(--spacing-sm) 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.m-search {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0 var(--spacing-md) var(--spacing-sm);
+  padding: 0 var(--spacing-md);
+  height: 44px;
+  background: var(--neutral-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+}
+
+.m-search svg {
+  color: var(--neutral-light);
+  flex-shrink: 0;
+}
+
+.m-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem; /* >=16px avoids iOS input zoom */
+  color: var(--neutral-text);
+  outline: none;
+  min-width: 0;
+}
+
+.m-search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--border);
+  color: var(--neutral-text);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Horizontal-scroll category chips — never a long vertical list */
+.m-chips {
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  padding: 2px var(--spacing-md);
+  scrollbar-width: none;
+}
+
+.m-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.m-chip {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  white-space: nowrap;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  min-height: 38px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--neutral-text);
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.m-chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(230, 57, 70, 0.3);
+}
+
+/* ---------- Results ---------- */
+.m-results {
+  padding: var(--spacing-md);
+  scroll-margin-top: 130px; /* stop below the sticky header + controls */
+}
+
+.m-result-count {
+  font-size: 0.82rem;
+  color: var(--neutral-light);
+  margin: 0 0 var(--spacing-md);
+}
+
+.m-result-count strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.m-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* ---------- Product card ---------- */
+.m-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.m-card-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: none;
+  background: var(--neutral-bg);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.m-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.m-card-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: #fff;
+}
+
+.m-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-md);
+  flex: 1;
+}
+
+.m-card-body h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--neutral-text);
+  margin: 0;
+  cursor: pointer;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.m-card-cat {
+  font-size: 0.72rem;
+  color: var(--neutral-lighter);
+  margin: 0;
+}
+
+.m-card-moq {
+  font-size: 0.78rem;
+  color: var(--neutral-text);
+  margin: 2px 0 var(--spacing-sm);
+}
+
+.m-card-moq span {
+  color: var(--neutral-light);
+  font-weight: 600;
+}
+
+.m-card-quote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: auto;
+  min-height: 40px;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.18s ease;
+}
+
+.m-card-quote:active {
+  background: var(--primary-dark);
+}
+
+/* ---------- Empty state ---------- */
+.m-empty {
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  color: var(--neutral-light);
+}
+
+.m-empty-reset {
+  margin-top: var(--spacing-md);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* ---------- Floating quote CTA ---------- */
+.m-floating-cta {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(230, 57, 70, 0.4);
+}
+
+.m-floating-cta:active {
+  background: var(--primary-dark);
+}
+
+/* Very small phones: keep chips comfortable, tighten hero */
+@media (max-width: 480px) {
+  .m-sticky-controls {
+    top: 58px;
+  }
+
+  .m-products-hero h1 {
+    font-size: 1.45rem;
+  }
+
+  .m-grid {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Narrowest phones: single column so images/text stay legible */
+@media (max-width: 340px) {
+  .m-grid {
+    grid-template-columns: 1fr;
+  }
+}

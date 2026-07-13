@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import ProductsPage from './pages/ProductsPage';
+import ProductsPageResponsive from './pages/ProductsPageResponsive';
 import ProductDetailPage from './pages/ProductDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -27,7 +27,7 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'products':
-        return <ProductsPage onSelectProduct={(prod) => handleNavigate('product-detail', selectedCategory, prod)} />;
+        return <ProductsPageResponsive onSelectProduct={(prod) => handleNavigate('product-detail', selectedCategory, prod)} />;
       case 'product-detail':
         return <ProductDetailPage product={selectedProduct} onBack={() => handleNavigate('products')} />;
       case 'about':
