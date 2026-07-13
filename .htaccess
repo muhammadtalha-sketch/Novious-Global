@@ -1,0 +1,14 @@
+# Passenger process control for cPanel "Setup Node.js App".
+# Goal: keep the account to ONE Node instance so CloudLinux NPROC (which counts
+# THREADS, ~13 per Node process) never saturates the 100-task limit.
+# cPanel injects its own PassengerAppRoot / PassengerStartupFile block above this;
+# these directives tune the pool. If the host disallows any line in .htaccess,
+# ask support to set it at the vhost level instead.
+
+PassengerMinInstances 1
+PassengerMaxPoolSize 1
+PassengerMaxRequestQueueSize 20
+
+# Optional: recycle a worker after N requests so memory can't creep (keeps the
+# single instance healthy without ever spawning a second one).
+PassengerMaxRequests 2000
