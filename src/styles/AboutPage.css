@@ -407,6 +407,10 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  /* Bias the crop toward the top so faces (in the upper part of these
+     portrait headshots) stay centered in the circle instead of being cut
+     off with too much torso showing. Same framing on desktop and mobile. */
+  object-position: center 20%;
   display: block;
   border: 3px solid white;
 }

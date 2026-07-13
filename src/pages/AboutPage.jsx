@@ -4,7 +4,6 @@ import {
   Award,
   TrendingUp,
   ArrowRight,
-  Building2,
   ShieldCheck,
   MessageSquareText,
   BadgeCheck,
@@ -78,19 +77,19 @@ export default function AboutPage({ onNavigate }) {
     {
       name: "Abdul Rehman",
       role: "Operations Manager",
-      photo: "/public/images/team/ABD.png",
+      photo: "/images/team/ABD.png",
       bio: "Oversees daily operations and supplier relationship management.",
     },
     {
       name: "Jack Wang",
       role: "Sourcing Expert",
-      photo: "/public/images/team/ALEXx.png",
+      photo: "/images/team/ALEXx.png",
       bio: "Local market expert matching clients with the right verified factories.",
     },
     {
       name: "Williamson",
       role: "Client Relations",
-      photo: "/public/images/team/Williamson.png",
+      photo: "/images/team/Williamson.png",
       bio: "Your dedicated point of contact from quote to delivery.",
     },
   ];

@@ -9,7 +9,8 @@
   max-width: 100%;
   overflow-x: hidden;
   background: var(--neutral-bg);
-  padding-bottom: 5.5rem; /* room for the floating CTA */
+  padding-bottom: 5.5rem;
+  /* room for the floating CTA */
 }
 
 /* ---------- Hero ---------- */
@@ -48,8 +49,9 @@
   font-weight: 600;
   padding: 4px 10px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #fff;
 }
 
 .m-trust-strip {
@@ -68,7 +70,8 @@
 /* ---------- Sticky controls (search + category chips) ---------- */
 .m-sticky-controls {
   position: sticky;
-  top: 68px; /* clears the sticky site header on mobile */
+  top: 68px;
+  /* clears the sticky site header on mobile */
   z-index: 20;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: saturate(180%) blur(8px);
@@ -99,7 +102,8 @@
   flex: 1;
   border: none;
   background: transparent;
-  font-size: 0.95rem; /* >=16px avoids iOS input zoom */
+  font-size: 0.95rem;
+  /* >=16px avoids iOS input zoom */
   color: var(--neutral-text);
   outline: none;
   min-width: 0;
@@ -160,7 +164,8 @@
 /* ---------- Results ---------- */
 .m-results {
   padding: var(--spacing-md);
-  scroll-margin-top: 130px; /* stop below the sticky header + controls */
+  scroll-margin-top: 130px;
+  /* stop below the sticky header + controls */
 }
 
 .m-result-count {

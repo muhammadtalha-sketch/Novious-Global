@@ -111,7 +111,7 @@ export default function BusinessStrategyPage({ onNavigate }) {
               return (
                 <div key={index} className="strategy-card">
                   <div className="strategy-icon">
-                    <IconComponent size={36} />
+                    <IconComponent size={40} />
                   </div>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
@@ -177,7 +177,7 @@ export default function BusinessStrategyPage({ onNavigate }) {
               return (
                 <div key={index} className="strategy-card featured">
                   <div className="strategy-icon">
-                    <IconComponent size={36} />
+                    <IconComponent size={40} />
                   </div>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>

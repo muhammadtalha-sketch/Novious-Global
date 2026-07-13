@@ -7,10 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node server/index.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
     "lucide-react": "^1.17.0",
+    "nodemailer": "^6.9.16",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },

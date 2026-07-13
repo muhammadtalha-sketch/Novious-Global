@@ -74,6 +74,7 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--neutral-bg); /* neutral placeholder while the photo loads */
 }
 
 .services-gallery-grid img:hover {

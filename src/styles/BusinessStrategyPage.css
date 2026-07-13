@@ -145,8 +145,8 @@
 }
 
 .strategy-icon {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
   background: rgba(230, 57, 70, 0.1);
   border-radius: var(--radius-md);
   display: flex;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, MessageCircle, Globe } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
 import SocialIcon from '../components/SocialIcons';
 import '../styles/ContactPage.css';
 
@@ -17,6 +17,13 @@ export default function ContactPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
+
+  // Backend endpoint that relays the message over SMTP (see server/index.js).
+  // Configurable per environment via VITE_CONTACT_API_URL.
+  const CONTACT_API_URL =
+    import.meta.env.VITE_CONTACT_API_URL || 'http://localhost:3001/api/contact';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,11 +33,21 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
+    setError('');
+    setSending(true);
+    try {
+      const res = await fetch(CONTACT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+      setSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -39,8 +56,15 @@ export default function ContactPage() {
         subject: '',
         message: ''
       });
-      setSubmitted(false);
-    }, 3000);
+      setTimeout(() => setSubmitted(false), 6000);
+    } catch (err) {
+      setError(
+        err.message ||
+          'We could not send your message right now. Please email us directly at info@noviousglobal.com.'
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   const contactInfo = [
@@ -286,8 +310,12 @@ export default function ContactPage() {
                   </label>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-large">
-                  Send Message
+                {error && (
+                  <p className="form-error" role="alert">{error}</p>
+                )}
+
+                <button type="submit" className="btn btn-primary btn-large" disabled={sending}>
+                  {sending ? 'Sending…' : 'Send Message'}
                   <Send size={18} />
                 </button>
               </form>
