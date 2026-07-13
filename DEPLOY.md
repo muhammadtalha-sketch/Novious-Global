@@ -19,6 +19,40 @@
 
 ---
 
+## 0.5. ✅ RECOMMENDED FIX — serve it as STATIC (no Node app at all)
+
+**Confirmed by response headers:** the sister site `noviousglobal.com` returns
+`200` served by **LiteSpeed as static files** (`x-speedycache-source: Server`,
+CDN-cached) — **no Node process**. `ecs.ingeniousc.com` returns `503` because it
+was set up as a **Node.js app (lsnode/Passenger)**, and that Node app is what
+spawns the processes that exhaust NPROC.
+
+This is a **front-end-only** project. It does not need Node. The permanent,
+simplest fix is to host it exactly like `noviousglobal.com`:
+
+1. **Remove the Node app for this domain.** cPanel → *Setup Node.js App* →
+   open the `ecs.ingeniousc.com` app → **Stop**, then **Destroy/Delete** it.
+   → This alone frees all the node processes and ends the NPROC/503 immediately.
+2. **Upload the *contents* of `dist/`** into the domain's document root, so
+   `index.html` sits at the docroot. `contact.php` is inside `dist/` — include it.
+3. **Do NOT upload** `node_modules`, `app.js`, `server/`, `.env`, or `src/` —
+   static hosting needs none of them.
+4. **Contact form:** the build now POSTs to **`/contact.php`** (a tiny mailer that
+   runs as a short-lived PHP process — no persistent process, no NPROC hit). It
+   sends to `info@noviousglobal.com`; nothing else to configure.
+5. **Verify:**
+   ```
+   curl -sI https://ecs.ingeniousc.com     → HTTP/2 200, content-type text/html
+   ```
+   Then submit the contact form once and confirm the email arrives.
+
+> The `app.js` / Passenger single-instance approach in §4–§5 still works and is
+> kept as a **fallback** (if you ever want a same-origin Node API). For this
+> project the static path above is strictly better: zero Node, zero NPROC risk,
+> CDN-cached, identical to the site that already works.
+
+---
+
 ## 1. Architecture (as it actually is)
 
 | Layer | Reality |
