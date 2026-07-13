@@ -200,12 +200,12 @@
 .solution-icon {
   width: 56px;
   height: 56px;
-  background: rgba(15, 31, 62, 0.08);
+  background: rgba(230, 57, 70, 0.1);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--secondary);
+  color: var(--primary);
   flex-shrink: 0;
 }
 

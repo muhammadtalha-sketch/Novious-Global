@@ -72,7 +72,7 @@ export default function AboutPage({ onNavigate }) {
     {
       name: "Hamid",
       role: "Founder & CEO",
-      photo: "/images/team/hamid-founder.jpg",
+      photo: "/images/team/hamid.jpeg",
       bio: "Founded Novious Global to make China sourcing transparent and reliable.",
     },
     {
@@ -142,7 +142,7 @@ export default function AboutPage({ onNavigate }) {
           <div className="founder-content">
             <div className="founder-image-wrapper">
               <img
-                src="/images/team/hamid-founder.jpg"
+                src="/images/team/hamid.jpeg"
                 alt="Hamid — Founder & CEO"
                 className="founder-photo"
               />

@@ -47,7 +47,9 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: 'Address',
-      details: 'Lotus Tower, No. 150 Tianzhou Road, Shanghai 200032, China'
+      details: 'Lotus Tower, No. 150 Tianzhou Road, Shanghai 200032, China',
+      link: 'https://maps.app.goo.gl/WqJA4MNh9Q34Pzhd9',
+      external: true
     },
     {
       icon: Mail,
@@ -73,12 +75,6 @@ export default function ContactPage() {
       details: '+86 156 1848 3542',
       link: WHATSAPP_LINK
     },
-    {
-      icon: Globe,
-      title: 'Website',
-      details: 'noviousglobal.com',
-      link: 'https://noviousglobal.com'
-    }
   ];
 
   const socialLinks = [
@@ -138,7 +134,7 @@ export default function ContactPage() {
                 <div className="info-content">
                   <h3>{info.title}</h3>
                   {info.link ? (
-                    <a href={info.link} className="info-link" target={info.title.startsWith('WhatsApp') ? '_blank' : undefined} rel="noopener noreferrer">{info.details}</a>
+                    <a href={info.link} className="info-link" target={info.title.startsWith('WhatsApp') || info.external ? '_blank' : undefined} rel="noopener noreferrer">{info.details}</a>
                   ) : (
                     <p>{info.details}</p>
                   )}
