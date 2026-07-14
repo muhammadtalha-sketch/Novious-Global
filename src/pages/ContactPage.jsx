@@ -1,66 +1,68 @@
-import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
-import SocialIcon from '../components/SocialIcons';
-import '../styles/ContactPage.css';
+import { useState } from "react";
+import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
+import SocialIcon from "../components/SocialIcons";
+import "../styles/ContactPage.css";
 
-const WHATSAPP_NUMBER = '8615618483542';
+const WHATSAPP_NUMBER = "8615618483542";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    subject: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   // Backend endpoint that relays the message over SMTP (see server/index.js).
   // Configurable per environment via VITE_CONTACT_API_URL.
   const CONTACT_API_URL =
-    import.meta.env.VITE_CONTACT_API_URL || 'http://localhost:3001/api/contact';
+    import.meta.env.VITE_CONTACT_API_URL || "http://localhost:3001/api/contact";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setSending(true);
     try {
       const res = await fetch(CONTACT_API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) {
-        throw new Error(data.error || 'Something went wrong. Please try again.');
+        throw new Error(
+          data.error || "Something went wrong. Please try again.",
+        );
       }
       setSubmitted(true);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        subject: '',
-        message: ''
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        subject: "",
+        message: "",
       });
       setTimeout(() => setSubmitted(false), 6000);
     } catch (err) {
       setError(
         err.message ||
-          'We could not send your message right now. Please email us directly at info@noviousglobal.com.'
+          "We could not send your message right now. Please email us directly at info@noviousglobal.com.",
       );
     } finally {
       setSending(false);
@@ -70,66 +72,91 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Address',
-      details: 'Lotus Tower, No. 150 Tianzhou Road, Shanghai 200032, China',
-      link: 'https://maps.app.goo.gl/WqJA4MNh9Q34Pzhd9',
-      external: true
+      title: "Address",
+      details: "Lotus Tower, No. 150 Tianzhou Road, Shanghai 200032, China",
+      link: "https://maps.app.goo.gl/WqJA4MNh9Q34Pzhd9",
+      external: true,
     },
     {
       icon: Mail,
-      title: 'Email',
-      details: 'info@noviousglobal.com',
-      link: 'mailto:info@noviousglobal.com'
+      title: "Email",
+      details: "info@noviousglobal.com",
+      link: "mailto:info@noviousglobal.com",
     },
     {
       icon: Phone,
-      title: 'Phone (China)',
-      details: '+86 15618483542',
-      link: 'tel:+8615618483542'
+      title: "Phone (China)",
+      details: "+86 15618483542",
+      link: "tel:+8615618483542",
     },
     {
       icon: Phone,
-      title: 'Phone (Pakistan)',
-      details: '+92 307 7433743',
-      link: 'tel:+923077433743'
+      title: "Phone (Pakistan)",
+      details: "+92 307 7433743",
+      link: "tel:+923077433743",
     },
     {
       icon: MessageCircle,
-      title: 'WhatsApp (China)',
-      details: '+86 156 1848 3542',
-      link: WHATSAPP_LINK
+      title: "WhatsApp (China)",
+      details: "+86 156 1848 3542",
+      link: WHATSAPP_LINK,
     },
   ];
 
   const socialLinks = [
-    { label: 'YouTube', href: 'https://www.youtube.com/@NoviousGlobal', icon: 'youtube' },
-    { label: 'Instagram', href: 'https://www.instagram.com/chinasourcing_?igsh=OHN0NXdpNGxpcTBq&utm_source=qr', icon: 'instagram' },
-    { label: 'Facebook', href: 'https://www.facebook.com/noviousglobalsourcingchina', icon: 'facebook' },
-    { label: 'TikTok', href: 'https://www.tiktok.com/@novious.global.china', icon: 'tiktok' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/novious-global-sourcing-from-china/', icon: 'linkedin' }
+    {
+      label: "YouTube",
+      href: "https://www.youtube.com/@NoviousGlobal",
+      icon: "youtube",
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/chinasourcing_?igsh=OHN0NXdpNGxpcTBq&utm_source=qr",
+      icon: "instagram",
+    },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/noviousglobalsourcingchina",
+      icon: "facebook",
+    },
+    {
+      label: "TikTok",
+      href: "https://www.tiktok.com/@novious.global.china",
+      icon: "tiktok",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/company/novious-global-sourcing-from-china/",
+      icon: "linkedin",
+    },
   ];
 
   const faqs = [
     {
-      question: 'What services do you offer for product sourcing?',
-      answer: 'We provide end-to-end product sourcing services, including supplier identification, factory verification, quotation collection, price negotiation, sample coordination, and quality inspection to help businesses source reliable products from China and other markets.'
+      question: "What services do you offer for product sourcing?",
+      answer:
+        "We provide end-to-end product sourcing services, including supplier identification, factory verification, quotation collection, price negotiation, sample coordination, and quality inspection to help businesses source reliable products from China and other markets.",
     },
     {
-      question: 'How do you ensure the quality of products from suppliers?',
-      answer: 'Our team performs pre-shipment inspections, in-process quality checks, and factory audits to ensure that every product meets your quality standards. We also assist in sample review and compliance verification before mass production.'
+      question: "How do you ensure the quality of products from suppliers?",
+      answer:
+        "Our team performs pre-shipment inspections, in-process quality checks, and factory audits to ensure that every product meets your quality standards. We also assist in sample review and compliance verification before mass production.",
     },
     {
-      question: 'Can you help with Amazon FBA or e-commerce fulfillment?',
-      answer: 'Yes! We offer specialized FBA and e-commerce solutions, including product sourcing, supplier verification, packaging and labeling guidance, shipping to Amazon warehouses, and logistics coordination to help online sellers streamline their operations.'
+      question: "Can you help with Amazon FBA or e-commerce fulfillment?",
+      answer:
+        "Yes! We offer specialized FBA and e-commerce solutions, including product sourcing, supplier verification, packaging and labeling guidance, shipping to Amazon warehouses, and logistics coordination to help online sellers streamline their operations.",
     },
     {
-      question: 'Do you provide support for large or project-based sourcing?',
-      answer: 'Absolutely. Our Project-Based Services include personalized consultations, factory visits, supplier meetings, contract support, price negotiation, and end-to-end project management, ensuring smooth execution from production to shipment.'
+      question: "Do you provide support for large or project-based sourcing?",
+      answer:
+        "Absolutely. Our Project-Based Services include personalized consultations, factory visits, supplier meetings, contract support, price negotiation, and end-to-end project management, ensuring smooth execution from production to shipment.",
     },
     {
-      question: 'How do I get a quotation for my sourcing requirements?',
-      answer: 'You can share your project details with us through our contact form or consultation call. Once we understand your requirements, we provide a transparent quotation tailored to your product specifications, quantity, and sourcing complexity.'
-    }
+      question: "How do I get a quotation for my sourcing requirements?",
+      answer:
+        "You can share your project details with us through our contact form or consultation call. Once we understand your requirements, we provide a transparent quotation tailored to your product specifications, quantity, and sourcing complexity.",
+    },
   ];
 
   return (
@@ -137,7 +164,10 @@ export default function ContactPage() {
       {/* Header */}
       <div className="contact-header">
         <h1>Get In Touch</h1>
-        <p>Have questions? Our sourcing specialists are ready to help you find the perfect suppliers.</p>
+        <p>
+          Have questions? Our sourcing specialists are ready to help you find
+          the perfect suppliers.
+        </p>
       </div>
 
       <div className="contact-container">
@@ -145,7 +175,8 @@ export default function ContactPage() {
         <aside className="contact-info-section">
           <h2>Contact Information</h2>
           <p className="info-intro">
-            Reach out to us through any of these channels. We typically respond within 24 hours.
+            Reach out to us through any of these channels. We typically respond
+            within 24 hours.
           </p>
 
           {contactInfo.map((info, index) => {
@@ -158,7 +189,18 @@ export default function ContactPage() {
                 <div className="info-content">
                   <h3>{info.title}</h3>
                   {info.link ? (
-                    <a href={info.link} className="info-link" target={info.title.startsWith('WhatsApp') || info.external ? '_blank' : undefined} rel="noopener noreferrer">{info.details}</a>
+                    <a
+                      href={info.link}
+                      className="info-link"
+                      target={
+                        info.title.startsWith("WhatsApp") || info.external
+                          ? "_blank"
+                          : undefined
+                      }
+                      rel="noopener noreferrer"
+                    >
+                      {info.details}
+                    </a>
                   ) : (
                     <p>{info.details}</p>
                   )}
@@ -186,7 +228,13 @@ export default function ContactPage() {
             <h3>Follow Us</h3>
             <div className="social-links-list">
               {socialLinks.map((s, i) => (
-                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="social-link-item">
+                <a
+                  key={i}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link-item"
+                >
                   <SocialIcon name={s.icon} size={28} />
                   {s.label}
                 </a>
@@ -207,13 +255,18 @@ export default function ContactPage() {
         <main className="contact-form-section">
           <div className="form-wrapper">
             <h2>Send us a Message</h2>
-            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+            <p>
+              Fill out the form below and we'll get back to you as soon as
+              possible.
+            </p>
 
             {submitted ? (
               <div className="success-message">
                 <div className="success-icon">✓</div>
                 <h3>Thank You!</h3>
-                <p>We've received your message and will respond within 24 hours.</p>
+                <p>
+                  We've received your message and will respond within 24 hours.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-form">
@@ -280,7 +333,9 @@ export default function ContactPage() {
                   >
                     <option value="">Select a subject...</option>
                     <option value="product-sourcing">Product Sourcing</option>
-                    <option value="supplier-verification">Supplier Verification</option>
+                    <option value="supplier-verification">
+                      Supplier Verification
+                    </option>
                     <option value="quality-control">Quality Control</option>
                     <option value="logistics">Shipping & Logistics</option>
                     <option value="fba">Amazon FBA Solutions</option>
@@ -305,21 +360,56 @@ export default function ContactPage() {
 
                 <div className="form-agreement">
                   <label>
-                    <input type="checkbox" required />
-                    I agree to the privacy policy and terms of service
+                    <input type="checkbox" required />I agree to the privacy
+                    policy and terms of service
                   </label>
                 </div>
 
                 {error && (
-                  <p className="form-error" role="alert">{error}</p>
+                  <p className="form-error" role="alert">
+                    {error}
+                  </p>
                 )}
 
-                <button type="submit" className="btn btn-primary btn-large" disabled={sending}>
-                  {sending ? 'Sending…' : 'Send Message'}
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-large"
+                  disabled={sending}
+                >
+                  {sending ? "Sending…" : "Send Message"}
                   <Send size={18} />
                 </button>
               </form>
             )}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "30px",
+                marginTop: "40px",
+                flexWrap: "wrap",
+              }}
+            >
+              <img
+                src="public/Whatsapp.jpeg"
+                alt="WhatsApp QR"
+                style={{
+                  width: "180px",
+                  height: "180px",
+                  objectFit: "contain",
+                }}
+              />
+
+              <img
+                src="/public/WEChat.jpeg"
+                alt="WeChat QR"
+                style={{
+                  width: "180px",
+                  height: "180px",
+                  objectFit: "contain",
+                }}
+              />
+            </div>
           </div>
         </main>
       </div>
@@ -328,12 +418,26 @@ export default function ContactPage() {
       <section className="contact-gallery-section">
         <div className="container">
           <h2>Meet Us on the Ground in China</h2>
-          <p className="section-subtitle">Real visits with our clients and manufacturing partners</p>
+          <p className="section-subtitle">
+            Real visits with our clients and manufacturing partners
+          </p>
           <div className="contact-gallery-grid">
-            <img src="/images/real/contact-grid-1.jpg" alt="Client visit in China" />
-            <img src="/images/real/contact-grid-2.jpg" alt="Supplier factory visit" />
-            <img src="/images/real/contact-grid-3.jpg" alt="Client facility visit and project briefing" />
-            <img src="/images/real/contact-grid-4.jpg" alt="Client meeting at Novious Global office" />
+            <img
+              src="/images/real/contact-grid-1.jpg"
+              alt="Client visit in China"
+            />
+            <img
+              src="/images/real/contact-grid-2.jpg"
+              alt="Supplier factory visit"
+            />
+            <img
+              src="/images/real/contact-grid-3.jpg"
+              alt="Client facility visit and project briefing"
+            />
+            <img
+              src="/images/real/contact-grid-4.jpg"
+              alt="Client meeting at Novious Global office"
+            />
           </div>
         </div>
       </section>
