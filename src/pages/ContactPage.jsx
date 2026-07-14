@@ -391,7 +391,7 @@ export default function ContactPage() {
               }}
             >
               <img
-                src="public/Whatsapp.jpeg"
+                src="/Whatsapp.jpeg"
                 alt="WhatsApp QR"
                 style={{
                   width: "180px",
@@ -401,7 +401,7 @@ export default function ContactPage() {
               />
 
               <img
-                src="/public/WEChat.jpeg"
+                src="/WEChat.jpeg"
                 alt="WeChat QR"
                 style={{
                   width: "180px",
